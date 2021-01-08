@@ -1,0 +1,156 @@
+{% if displaySidebar is defined and displaySidebar is same as false %}
+    {% set sidebarDisplayed = false %}
+{% else %}
+    {% set sidebarDisplayed = true %}
+{% endif %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}{{ 'Site title'|trans }}{% endblock %}</title>
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('front_app') }}
+        {% endblock %}
+    </head>
+    <body{% if backgroundAdvertising is defined %} style="background-image: {{ asset('build/images/' ~ backgroundAdvertising.image) }};"{% endif %}>
+        {% block header %}
+            <header>
+                <div class="logo-container col-2 pull-left">
+                    <a href="{{ path('app_front_home') }}">
+                        <img src="{{ asset('build/images/logo.png') }}" alt="{{ 'Site title'|trans }}" title="{{ 'Site title'|trans }}" />
+                    </a>
+                </div>
+                <div class="header-container col-10 pull-right">
+                    <div class="header-top">
+                        {{ render(controller(
+                            'App\\Controller\\Front\\CommonController::menu'
+                        )) }}
+                    </div>
+                    <div class="header-bottom">
+                        {% block header_top %}{% endblock %}
+                    </div>
+                </div>
+            </header>
+        {% endblock header %}
+        {% block body %}
+            <div class="container-fluid padding-0">
+                <div class="row">
+                    {% block container %}
+                        <div class="wrapper">
+                            <div id="content">
+                                {% if backgroundAdvertising is defined %}
+                                    <a href="{{ backgroundAdvertising.link }}" class="background-link"></a>
+                                {% endif %}
+                                <div class="container-fluid padding-0{% if container_class is defined %} {{ container_class }}{% endif %}">
+                                    {% block page_header %}{% endblock page_header %}
+                                    {% block content_wide %}
+                                    <div class="front-content container">
+                                        <div class="main-content pull-left{% if sidebarDisplayed is same as true %} col-9{% else %} col-12{% endif %}">
+                                            {% block content %}{% endblock %}
+                                        </div>
+                                        {% if sidebarDisplayed is same as true %}
+                                            <div class="sidebar-content pull-right col-3">
+                                                {% block sidebar_content %}
+                                                    {{ render(controller(
+                                                        'App\\Controller\\Front\\CommonController::sidebar'
+                                                    )) }}
+                                                {% endblock %}
+                                            </div>
+                                        {% endif %}
+                                    </div>
+                                    {% endblock content_wide %}
+                                </div>
+                            </div>
+                        </div>
+                    {% endblock %}
+                </div>
+            </div>
+        {% endblock %}
+        {% block footer %}
+            <footer>
+                <div class="footer-content">
+                    <div class="col-6 pull-left">
+                        <div class="block-title">{{ 'About us'|trans }}</div>
+                        <div class="block-content">
+                            <ul>
+                                <li><a href="{{ path('app_front_formations') }}">Nos formations</a></li>
+                                <li><a href="#">Conditions générales</a></li>
+                                <li><a href="#">Mentions légales</a></li>
+                                <li><a href="{{ path('app_front_contact') }}">Contactez nous</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-6 pull-right">
+                        <div class="block-title">{{ 'Follow us'|trans }}</div>
+                        <div class="block-content newsletter clearfix">
+                            <div class="col-12 padding-0">
+                                <p>{{ 'Subscribe to newsletter'|trans }}</p>
+                            </div>
+                            <div class="col-12 padding-0">
+                                <div class="col-10 pull-left padding-0">
+                                    <form action="#"><input class="form-control form-control-newsletter" id="form-control-newsletter" type="email" name="email" maxlength="255" placeholder="{{ 'Enter your mail'|trans }}" /></form>
+                                </div>
+                                <div class="col-2 pull-right padding-0 padding-left-10">
+                                    <button class="btn btn-newsletter">{{ 'OK'|trans }}</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="block-content socials margin-top-50 clearfix">
+                            <ul>
+                                <li>
+                                    <a href="#" target="_blank" title="Youtube" class="social-icon icon-youtube"></a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank" title="Twitter" class="social-icon icon-twitter"></a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank" title="LinkedIn" class="social-icon icon-linkedin"></a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank" title="Facebook" class="social-icon icon-facebook"></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        {% endblock footer %}
+        {% block modal %}{% endblock %}
+        {% block modalNewsletter %}
+            <div class="modal fade newsletter-modal" id="newsletter-subscription-confirmation" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <div class="col-12 icon-confirmation green"><i class="bx bx-check"></i> </div>
+                        </div>
+                        <div class="modal-body">
+                            {{ 'Thanks for your newsletter subscription'|trans }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade newsletter-modal" id="newsletter-subscription-error" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <div class="col-12 icon-confirmation red"><i class="bx bx-x"></i> </div>
+                        </div>
+                        <div class="modal-body">
+                            {{ 'Newsletter subscription failed'|trans }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endblock %}
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('front_app') }}
+        {% endblock %}
+    </body>
+</html>

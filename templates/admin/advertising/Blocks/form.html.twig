@@ -1,0 +1,51 @@
+{% set disableNonEditableFields = false %}
+{% if isAttributeLinkedToAProperty is defined and isAttributeLinkedToAProperty is same as(true) %}
+    {% set disableNonEditableFields = true %}
+{% endif %}
+{{ form_start(form) }}
+<table class="table table-responsive-xl table-borderless">
+    <tbody>
+    <tr>
+        <td class="col-form-label">
+            {{ form_label(form.name) }}
+            {{ form_errors(form.name) }}
+        </td>
+        <td>
+            {{ form_widget(form.name) }}
+        </td>
+    </tr>
+    <tr>
+        <td class="col-form-label">
+            {{ form_label(form.type) }}
+            {% if disableNonEditableFields is same as(true) %}
+            <a class="btn-floating btn btn-help btn-sm btn-primary" data-toggle="tooltip" data-placement="right" title="{{ 'attribute field can be edit because it\'s linked to a property'|trans }}">
+                <i class="oi oi-question-mark"></i>
+            </a>
+            {% endif %}
+            {{ form_errors(form.type) }}
+        </td>
+        <td>
+            {{ form_widget(form.type, {'attr': {'disabled': disableNonEditableFields}}) }}
+        </td>
+    </tr>
+    {% if form.values is defined %}
+        <tr>
+            <td class="col-form-label">
+                {{ form_label(form.values) }}
+                {{ form_errors(form.values) }}
+            </td>
+            <td>
+                {{ form_widget(form.values) }}
+            </td>
+        </tr>
+    {% endif %}
+    <tr>
+        <td></td>
+        <td class="submit">
+            <a href="{{ path('app_admin_attributes') }}" class="btn btn-light form-action-button">{{ 'Cancel'|trans }}</a>
+            <button type="submit" class="btn btn-primary form-action-button">{{ 'Submit'|trans }}</button>
+        </td>
+    </tr>
+    </tbody>
+</table>
+{{ form_end(form) }}

@@ -1,0 +1,57 @@
+{{ form_start(filterForm) }}
+<table class="table table-responsive-xl table-borderless">
+    <tbody>
+    <tr>
+        <td class="col-form-label">
+            {{ form_label(filterForm.username) }}
+            {{ form_errors(filterForm.username) }}
+        </td>
+        <td>
+            {{ form_widget(filterForm.username) }}
+        </td>
+    </tr>
+    <tr>
+        <td class="col-form-label">
+            {{ form_label(filterForm.email) }}
+            {{ form_errors(filterForm.email) }}
+        </td>
+        <td>
+            {{ form_widget(filterForm.email) }}
+        </td>
+    </tr>
+    <tr>
+        <td class="col-form-label">
+            {{ form_label(filterForm.enabled) }}
+            {{ form_errors(filterForm.enabled) }}
+        </td>
+        <td>
+            {{ form_widget(filterForm.enabled) }}
+        </td>
+    </tr>
+    <tr>
+        <td class="col-form-label">
+            {{ form_label(filterForm.is_verified) }}
+            {{ form_errors(filterForm.is_verified) }}
+        </td>
+        <td>
+            {{ form_widget(filterForm.is_verified) }}
+        </td>
+    </tr>
+    <tr>
+        <td class="col-form-label">
+            {{ form_label(filterForm.roles) }}
+            {{ form_errors(filterForm.roles) }}
+        </td>
+        <td>
+            {{ form_widget(filterForm.roles) }}
+        </td>
+    </tr>
+    <tr>
+        <td></td>
+        <td class="submit">
+            <button type="submit" class="btn btn-primary">{{ 'Filter'|trans }}</button>
+        </td>
+    </tr>
+    </tbody>
+</table>
+{{ form_end(filterForm) }}

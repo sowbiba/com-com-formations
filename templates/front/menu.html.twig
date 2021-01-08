@@ -1,0 +1,88 @@
+{% import 'front/Macros/menu.html.twig' as menuLinkMacro %}
+
+<div id="carousel-domains" class="nav-main carousel slide carousel-multi-item" data-ride="carousel">
+
+    <a href="#carousel-domains" data-slide="prev">
+        <div class="controls control-left">
+            <p><i class="arrow left"></i></p>
+        </div>
+    </a>
+
+    <!--Slides-->
+    <div class="carousel-inner" role="listbox">
+        <!--First slide-->
+        <div class="carousel-item active">
+            <div class="row">
+                {% for domain in domains|slice(0,6) %}
+                    <div class="domain-item col-md-2 clearfix d-none d-md-block {% if domain.color %} nav-main--link-l2--{{ domain.color }}{% else %}{{ menuLinkMacro.printLinkClass(loop.index) }}{% endif %}">
+                        <div class="card mb-2">
+                        <a href="{{ path('app_front_domain', {'slug': domain.slug}) }}" class="nav-main--link-l2">
+                            <div class="icon">
+                                <i class="bx {% if domain.icon %} bxl-{{ domain.icon }} bxs-{{ domain.icon }} bx-{{ domain.icon }}{% else %}bx-alarm-snooze{% endif %}"></i>
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-title">{{ domain.title }}</h4>
+                            </div>
+                        </a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+
+        </div>
+        <!--/.First slide-->
+
+        <!--Second slide-->
+        {% if domains|length > 6 %}
+        <div class="carousel-item">
+            <div class="row">
+                {% for domain in domains|slice(6,6) %}
+                    <div class="domain-item col-md-2 clearfix d-none d-md-block {% if domain.color %} nav-main--link-l2--{{ domain.color }}{% else %}{{ menuLinkMacro.printLinkClass(loop.index+6) }}{% endif %}">
+                        <a href="{{ path('app_front_domain', {'slug': domain.slug}) }}" class="nav-main--link-l2">
+                            <div class="card mb-2">
+                                <div class="icon"><i class="bx {% if domain.icon %} bxl-{{ domain.icon }} bxs-{{ domain.icon }} bx-{{ domain.icon }}{% else %}bx-alarm-snooze{% endif %}"></i></div>
+                                <div class="card-body">
+                                    <h4 class="card-title">{{ domain.title }}</h4>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+
+        </div>
+        {% endif %}
+        <!--/.Second slide-->
+
+        <!--Third slide-->
+        {% if domains|length > 12 %}
+        <div class="carousel-item">
+            <div class="row">
+                {% for domain in domains|slice(12,6) %}
+                    <div class="domain-item col-md-2 clearfix d-none d-md-block {% if domain.color %} nav-main--link-l2--{{ domain.color }}{% else %}{{ menuLinkMacro.printLinkClass(loop.index+12) }}{% endif %}">
+                        <a href="{{ path('app_front_domain', {'slug': domain.slug}) }}" class="nav-main--link-l2">
+                            <div class="card mb-2">
+                                <div class="icon"><i class="bx {% if domain.icon %} bxl-{{ domain.icon }} bxs-{{ domain.icon }} bx-{{ domain.icon }}{% else %}bx-alarm-snooze{% endif %}"></i></div>
+                                <div class="card-body">
+                                    <h4 class="card-title">{{ domain.title }}</h4>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+        <!--/.Third slide-->
+
+    </div>
+    <!--/.Slides-->
+
+    <a href="#carousel-domains" data-slide="next">
+        <div class="controls control-right">
+            <p><i class="arrow right"></i></p>
+        </div>
+    </a>
+
+</div>
+<!--/.Carousel Wrapper-->

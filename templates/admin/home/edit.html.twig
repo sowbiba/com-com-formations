@@ -1,0 +1,276 @@
+{% extends 'admin/base.html.twig' %}
+
+{% set active_menu = 'home' %}
+{% set container_class = 'container-sm' %}
+
+{% block title %}{{ 'Edit home'|trans }}{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('home') }}
+{% endblock %}
+
+{% block content %}
+    <h1>{{ 'Edit home'|trans }}</h1>
+
+    {{ form_start(form) }}
+    <table class="table table-responsive-xl table-borderless">
+        <tbody>
+        <tr>
+            <td class="col-form-label">
+                {{ form_label(form.mainTitle) }}
+                {{ form_errors(form.mainTitle) }}
+            </td>
+            <td>
+                {{ form_widget(form.mainTitle) }}
+            </td>
+        </tr>
+        <tr>
+            <td class="col-form-label">
+                {{ form_label(form.mainSubtitle) }}
+                {{ form_errors(form.mainSubtitle) }}
+            </td>
+            <td>
+                {{ form_widget(form.mainSubtitle) }}
+            </td>
+        </tr>
+        <tr>
+            <td class="col-form-label">
+                {{ form_label(form.mainButtonText) }}
+                {{ form_errors(form.mainButtonText) }}
+            </td>
+            <td>
+                {{ form_widget(form.mainButtonText) }}
+            </td>
+        </tr>
+        <tr>
+            <td class="col-form-label">
+                {{ form_label(form.mainButtonLink) }}
+                {{ form_errors(form.mainButtonLink) }}
+            </td>
+            <td>
+                {{ form_widget(form.mainButtonLink) }}
+            </td>
+        </tr>
+        <tr>
+            <td class="col-form-label">
+                {{ form_label(form.boxOneTitle) }}
+                {{ form_errors(form.boxOneTitle) }}
+            </td>
+            <td>
+                {{ form_widget(form.boxOneTitle) }}
+            </td>
+        </tr>
+        <tr>
+            <td class="col-form-label">
+                {{ form_label(form.boxOneContent) }}
+                {{ form_errors(form.boxOneContent) }}
+            </td>
+            <td>
+                {{ form_widget(form.boxOneContent) }}
+            </td>
+        </tr>
+        <tr>
+            <td class="col-form-label">
+                {{ form_label(form.boxTwoTitle) }}
+                {{ form_errors(form.boxTwoTitle) }}
+            </td>
+            <td>
+                {{ form_widget(form.boxTwoTitle) }}
+            </td>
+        </tr>
+        <tr>
+            <td class="col-form-label">
+                {{ form_label(form.boxTwoContent) }}
+                {{ form_errors(form.boxTwoContent) }}
+            </td>
+            <td>
+                {{ form_widget(form.boxTwoContent) }}
+            </td>
+        </tr>
+        <tr>
+            <td class="col-form-label">
+                {{ form_label(form.boxThreeTitle) }}
+                {{ form_errors(form.boxThreeTitle) }}
+            </td>
+            <td>
+                {{ form_widget(form.boxThreeTitle) }}
+            </td>
+        </tr>
+        <tr>
+            <td class="col-form-label">
+                {{ form_label(form.boxThreeContent) }}
+                {{ form_errors(form.boxThreeContent) }}
+            </td>
+            <td>
+                {{ form_widget(form.boxThreeContent) }}
+            </td>
+        </tr>
+        <tr>
+            <td class="col-form-label">
+                {{ form_label(form.boxFourTitle) }}
+                {{ form_errors(form.boxFourTitle) }}
+            </td>
+            <td>
+                {{ form_widget(form.boxFourTitle) }}
+            </td>
+        </tr>
+        <tr>
+            <td class="col-form-label">
+                {{ form_label(form.boxFourContent) }}
+                {{ form_errors(form.boxFourContent) }}
+            </td>
+            <td>
+                {{ form_widget(form.boxFourContent) }}
+            </td>
+        </tr>
+        <tr>
+            <td class="col-form-label">
+                {{ form_label(form.middleBlockTitle) }}
+                {{ form_errors(form.middleBlockTitle) }}
+            </td>
+            <td>
+                {{ form_widget(form.middleBlockTitle) }}
+            </td>
+        </tr>
+        <tr>
+            <td class="col-form-label">
+                {{ form_label(form.middleBlockSubtitle) }}
+                {{ form_errors(form.middleBlockSubtitle) }}
+            </td>
+            <td>
+                {{ form_widget(form.middleBlockSubtitle) }}
+            </td>
+        </tr>
+        <tr>
+            <td class="col-form-label">
+                {{ form_label(form.middleBlockBoxOneIcon) }}
+                {{ form_errors(form.middleBlockBoxOneIcon) }}
+                <a class="btn-floating btn btn-help btn-sm btn-primary" data-trigger="click focus" data-toggle="tooltip" data-placement="right" title="{{ 'icon help'|trans({'%link_start%': '<a href=\'https://boxicons.com/\' target=\'_blank\'>', '%link_end%': '</a>'})|raw }}">
+                    <i class="oi oi-question-mark"></i>
+                </a>
+            </td>
+            <td>
+                <div class="col-10 pull-left padding-0">
+                    {{ form_widget(form.middleBlockBoxOneIcon) }}
+                </div>
+                <div class="pull-right middle-block-box-one-icon-sample icon-sample padding-0">
+                    <i class="icon bx"></i>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td class="col-form-label">
+                {{ form_label(form.middleBlockBoxOneTitle) }}
+                {{ form_errors(form.middleBlockBoxOneTitle) }}
+            </td>
+            <td>
+                {{ form_widget(form.middleBlockBoxOneTitle) }}
+            </td>
+        </tr>
+        <tr>
+            <td class="col-form-label">
+                {{ form_label(form.middleBlockBoxOneContent) }}
+                {{ form_errors(form.middleBlockBoxOneContent) }}
+            </td>
+            <td>
+                {{ form_widget(form.middleBlockBoxOneContent) }}
+            </td>
+        </tr>
+        <tr>
+            <td class="col-form-label">
+                {{ form_label(form.middleBlockBoxTwoIcon) }}
+                {{ form_errors(form.middleBlockBoxTwoIcon) }}
+                <a class="btn-floating btn btn-help btn-sm btn-primary" data-trigger="click focus" data-toggle="tooltip" data-placement="right" title="{{ 'icon help'|trans({'%link_start%': '<a href=\'https://boxicons.com/\' target=\'_blank\'>', '%link_end%': '</a>'})|raw }}">
+                    <i class="oi oi-question-mark"></i>
+                </a>
+            </td>
+            <td>
+                <div class="col-10 pull-left padding-0">
+                    {{ form_widget(form.middleBlockBoxTwoIcon) }}
+                </div>
+                <div class="pull-right middle-block-box-two-icon-sample icon-sample padding-0">
+                    <i class="icon bx"></i>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td class="col-form-label">
+                {{ form_label(form.middleBlockBoxTwoTitle) }}
+                {{ form_errors(form.middleBlockBoxTwoTitle) }}
+            </td>
+            <td>
+                {{ form_widget(form.middleBlockBoxTwoTitle) }}
+            </td>
+        </tr>
+        <tr>
+            <td class="col-form-label">
+                {{ form_label(form.middleBlockBoxTwoContent) }}
+                {{ form_errors(form.middleBlockBoxTwoContent) }}
+            </td>
+            <td>
+                {{ form_widget(form.middleBlockBoxTwoContent) }}
+            </td>
+        </tr>
+        <tr>
+            <td class="col-form-label">
+                {{ form_label(form.middleBlockBoxThreeIcon) }}
+                {{ form_errors(form.middleBlockBoxThreeIcon) }}
+                <a class="btn-floating btn btn-help btn-sm btn-primary" data-trigger="click focus" data-toggle="tooltip" data-placement="right" title="{{ 'icon help'|trans({'%link_start%': '<a href=\'https://boxicons.com/\' target=\'_blank\'>', '%link_end%': '</a>'})|raw }}">
+                    <i class="oi oi-question-mark"></i>
+                </a>
+            </td>
+            <td>
+                <div class="col-10 pull-left padding-0">
+                    {{ form_widget(form.middleBlockBoxThreeIcon) }}
+                </div>
+                <div class="pull-right middle-block-box-three-icon-sample icon-sample padding-0">
+                    <i class="icon bx"></i>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td class="col-form-label">
+                {{ form_label(form.middleBlockBoxThreeTitle) }}
+                {{ form_errors(form.middleBlockBoxThreeTitle) }}
+            </td>
+            <td>
+                {{ form_widget(form.middleBlockBoxThreeTitle) }}
+            </td>
+        </tr>
+        <tr>
+            <td class="col-form-label">
+                {{ form_label(form.middleBlockBoxThreeContent) }}
+                {{ form_errors(form.middleBlockBoxThreeContent) }}
+            </td>
+            <td>
+                {{ form_widget(form.middleBlockBoxThreeContent) }}
+            </td>
+        </tr>
+        <tr>
+            <td class="col-form-label">
+                {{ form_label(form.formationsBlockSubtitle) }}
+                {{ form_errors(form.formationsBlockSubtitle) }}
+            </td>
+            <td>
+                {{ form_widget(form.formationsBlockSubtitle) }}
+            </td>
+        </tr>
+        <tr><td colspan="2"></td></tr>
+        <tr><td colspan="2"></td></tr>
+        <tr>
+            <td class="submit" colspan="2">
+                <a href="{{ path('app_admin_home') }}" class="btn btn-light form-action-button">{{ 'Quit'|trans }}</a>
+                <button type="submit" class="btn btn-success form-action-button">{{ 'Save'|trans }}</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    {{ form_end(form) }}
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('home') }}
+{% endblock %}

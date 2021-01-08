@@ -1,0 +1,7 @@
+{% if (field is same as(sortField) and sortDirection is same as('ASC')) or (field is not same as(sortField)) %}
+    <span class="oi oi-sort-ascending{% if field is same as(sortField) %} text-success{% endif %}"></span>
+{% endif %}
+
+{% if field is same as(sortField) and sortDirection is same as('DESC') %}
+    <span class="oi oi-sort-descending text-success"></span>
+{% endif %}

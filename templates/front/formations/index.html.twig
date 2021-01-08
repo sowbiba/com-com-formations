@@ -1,0 +1,25 @@
+{% extends 'front/base.html.twig' %}
+
+{% block page_header %}
+    <div class="formations-list-header">
+        <div class="header-wrapper">
+            <h1>Toutes les formations</h1>
+        </div>
+    </div>
+{% endblock page_header %}
+
+{% block content %}
+    <div class="formations-list">
+        <ul>
+            {% for formation in pager.currentPageResults %}
+                {% include 'front/Blocks/listing/formation.html.twig' %}
+            {% endfor %}
+        </ul>
+    </div>
+
+    {% if pager.nbPages > 1 %}
+    <div class="pagerfanta">
+        {{ pagerfanta(pager, 'twitter_bootstrap4') }}
+    </div>
+    {% endif %}
+{% endblock content %}

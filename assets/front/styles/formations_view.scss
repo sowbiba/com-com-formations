@@ -1,0 +1,194 @@
+.formation-view-block {
+  background: #FFFFFF;
+  margin-top: 30px;
+  padding: 2em 2em;
+
+  .navs {
+    width: 100%;
+    background: #EEEEEE;
+  }
+
+  .nav-tabs {
+    border-bottom: 3px solid #007d99;
+  }
+
+  .nav-tabs .nav-link {
+    border-radius: 0;
+    text-transform: uppercase;
+    display: table-cell;
+    vertical-align: middle;
+    height: 50px;
+    border: none;
+    border-left: 1px solid #dfdfdf;
+    padding: 14px 1em .5em;
+    background: #EEEEEE;
+    color: #222;
+    font-family: Open Sans,Arial,serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    text-align: center;
+    transition: all .1s ease-in;
+
+    &:hover {
+      color: #007d99;
+    }
+
+    &#nav-program-tab {
+      flex: 0 0 13%;
+      max-width: 13%;
+    }
+    &#nav-intervenants-tab {
+      flex: 0 0 14%;
+      max-width: 14%;
+    }
+    &#nav-extras-tab {
+      flex: 0 0 11%;
+      max-width: 11%;
+    }
+    &#nav-pedagogic-means-tab {
+      flex: 0 0 23%;
+      max-width: 23%;
+    }
+    &#nav-dates-tab {
+      flex: 0 0 10%;
+      max-width: 10%;
+    }
+    &#nav-formations-linked-tab {
+      flex: 0 0 29%;
+      max-width: 29%;
+    }
+
+    &.active {
+      background: #007d99;
+      color: #fff;
+
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+
+  .tab-pane {
+    padding: 2em;
+    overflow-y: hidden;
+
+    &#nav-formations-linked {
+      a {
+        color: #007d99;
+        font-family: Open Sans Condensed, Arial, serif;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 0.8;
+        font-size: 18px;
+
+        &:hover {
+          color: #000000;
+        }
+      }
+    }
+  }
+}
+
+.tab-content {
+  text-align: justify;
+
+  h2 {
+    color: #21215d;
+    font-family: Open Sans Condensed, Arial, serif;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 0.8;
+    font-size: 20px;
+
+    &::after {
+      border-color: #007d99;
+      display: block;
+      content: "";
+      width: 50px;
+      border-style: solid;
+      border-width: 2px;
+      margin: .3em 0;
+    }
+  }
+
+  h3 {
+    color: #21215d;
+    font-family: Open Sans Condensed, Arial, serif;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 0.8;
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
+
+  h4 {
+    color: #007d99;
+    font-family: Open Sans Condensed, Arial, serif;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 0.8;
+    font-size: 17px;
+    text-transform: uppercase;
+  }
+
+  li {
+    position: relative;
+    padding-left: 15px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      font-family: icons;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 1.8;
+      color: #007d99;
+    }
+  }
+}
+
+.intervenant {
+  margin-bottom: 20px;
+  position: relative;
+  float: left;
+  width: 100%;
+
+  .intervenant-image {
+    figure {
+      text-align: center;
+      border: 1px solid #EEEEEE;
+
+      img {
+        max-height: 150px;
+        max-width: 150px;
+      }
+    }
+  }
+
+  .intervenant-infos {
+    font-size: 18px;
+
+    .intervenant-name {
+      color: #21215d;
+      font-family: Open Sans Condensed, Arial, serif;
+      font-style: normal;
+      font-weight: 700;
+    }
+
+    .intervenant-title {
+      color: #21215d;
+      font-family: Open Sans Condensed, Arial, serif;
+      font-style: italic;
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+
+    .intervenant-description {
+
+    }
+  }
+}

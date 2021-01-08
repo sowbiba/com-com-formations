@@ -1,0 +1,19 @@
+{% import 'front/Macros/menu.html.twig' as menuLinkMacro %}
+<ul id="ref-nav-main" class="bck-nav-main--items">
+    <li class="bck-nav-main--item">
+        <a href="javascript:void(0);" class="bck-nav-main--link" role="button" aria-controls="ref-nav-main-1">Toutes nos formations</a>
+        <ul class="bck-nav-main--items-l2" id="ref-nav-main-1" aria-hidden="true">
+            <li class="bck-nav-main--item-l2 {{ menuLinkMacro.printLinkClass() }}">
+                <a href="{{ path('app_front_formations') }}" class="bck-nav-main--link-l2">Toutes nos formations</a>
+            </li>
+            {% for domain in domains %}
+                <li class="bck-nav-main--item-l2 {{ menuLinkMacro.printLinkClass(loop.index) }}">
+                    <a href="{{ path('app_front_domain', {'slug': domain.slug}) }}" class="bck-nav-main--link-l2">{{ domain.title }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </li>
+    <li class="bck-nav-main--item">
+        <a href="#" class="bck-nav-main--link">Contactez-nous</a>
+    </li>
+</ul>

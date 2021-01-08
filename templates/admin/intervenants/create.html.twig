@@ -1,0 +1,21 @@
+{% extends 'admin/base.html.twig' %}
+
+{% set active_menu = 'intervenants' %}
+{% set container_class = 'container-sm' %}
+
+{% block title %}{{ 'Create intervenant'|trans }}{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('intervenants') }}
+{% endblock %}
+
+{% block content %}
+    <h1>{{ 'Create intervenant'|trans }}</h1>
+    {% include 'admin/intervenants/Blocks/form.html.twig' %}
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('intervenants') }}
+{% endblock %}

@@ -1,0 +1,327 @@
+.bck-nav-main--items {
+  font-size: 0;
+  text-align: left;
+  margin: 0;
+}
+.bck-nav-main--item {
+  display: inline-block;
+  font-size: 16px;
+  text-align: left;
+  position: static;
+
+  &:hover {
+    background-color: #1977cc;
+    //background-color: #e41b13;
+    //background-color: #009dd2;
+    color: #ffffff;
+
+    .bck-nav-main--link {
+      color: #ffffff;
+    }
+  }
+}
+
+.bck-nav-main--link {
+  //padding-right: 3em !important;
+  margin: 0;
+  padding: .3em 1.5em .4em 1.5em;
+  background: transparent;
+  display: inline-block;
+  color: #21215d;
+  font-family: Open Sans, Arial, serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 30px;
+  position: relative;
+  text-transform: uppercase;
+  transition: all .1s ease-in;
+}
+
+.bck-nav-main--items-l2 {
+  -webkit-column-count: 4;
+  -moz-column-count: 4;
+  column-count: 4;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  //left: -180px;
+  left: 15px;
+  width: auto;
+  border-top: 5px solid #1977cc;
+  //border-top: 5px solid #e41b13;
+  //border-top: 5px solid #009dd2;
+  border-right: 0;
+  border-left: 0;
+  padding: 3em;
+  background: #fff;
+  box-shadow: 0 5px 5px 1px rgba(147,145,156,.75);
+  display: none;
+  z-index: 1;
+}
+
+.bck-nav-main--item-l2 {
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
+  break-inside: avoid;
+  position: relative;
+
+  &::before {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 0;
+    right: auto;
+    left: 0;
+    //color: rgb(228, 27, 19);
+    font-family: icons;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.42857rem;
+    line-height: .8;
+  }
+}
+
+.bck-nav-main--link-l2--default:focus,
+.bck-nav-main--link-l2--default:hover,
+.bck-nav-main--link-l2--default::before,
+.bck-nav-main--link-l2--default .bck-nav-main--link-l2:hover {
+  color: #4babad !important;
+}
+
+.bck-nav-main--link-l2--blue:focus,
+.bck-nav-main--link-l2--blue:hover,
+.bck-nav-main--link-l2--blue::before,
+.bck-nav-main--link-l2--blue .bck-nav-main--link-l2:hover {
+  color: #264893 !important;
+}
+
+.bck-nav-main--link-l2--blue-corporate:focus,
+.bck-nav-main--link-l2--blue-corporate:hover,
+.bck-nav-main--link-l2--blue::before,
+.bck-nav-main--link-l2--blue .bck-nav-main--link-l2:hover {
+  color: #001e62 !important;
+}
+
+.bck-nav-main--link-l2--blue-light:focus,
+.bck-nav-main--link-l2--blue-light:hover,
+.bck-nav-main--link-l2--blue-light::before,
+.bck-nav-main--link-l2--blue-light .bck-nav-main--link-l2:hover
+{
+  color: #009dd2 !important;
+}
+
+.bck-nav-main--link-l2--blue-sky:focus,
+.bck-nav-main--link-l2--blue-sky:hover,
+.bck-nav-main--link-l2--blue-sky::before,
+.bck-nav-main--link-l2--blue-sky .bck-nav-main--link-l2:hover
+{
+  color: #70cfeb !important;
+}
+
+.bck-nav-main--link-l2--blue-xlight:focus,
+.bck-nav-main--link-l2--blue-xlight:hover,
+.bck-nav-main--link-l2--blue-xlight::before,
+.bck-nav-main--link-l2--blue-xlight .bck-nav-main--link-l2:hover
+{
+  color: #3fb7b6 !important;
+}
+
+.bck-nav-main--link-l2--green:focus,
+.bck-nav-main--link-l2--green:hover,
+.bck-nav-main--link-l2--green::before,
+.bck-nav-main--link-l2--green .bck-nav-main--link-l2:hover
+{
+  color: #007930 !important;
+}
+
+.bck-nav-main--link-l2--green-light:focus,
+.bck-nav-main--link-l2--green-light:hover,
+.bck-nav-main--link-l2--green-light::before,
+.bck-nav-main--link-l2--green-light .bck-nav-main--link-l2:hover
+{
+  color: #439173 !important;
+}
+
+.bck-nav-main--link-l2--green-xlight:focus,
+.bck-nav-main--link-l2--green-xlight:hover,
+.bck-nav-main--link-l2--green-xlight::before,
+.bck-nav-main--link-l2--green-xlight .bck-nav-main--link-l2:hover
+{
+  color: #76b72a !important;
+}
+
+.bck-nav-main--link-l2--green-xxlight:focus,
+.bck-nav-main--link-l2--green-xxlight:hover,
+.bck-nav-main--link-l2--green-xxlight::before,
+.bck-nav-main--link-l2--green-xxlight .bck-nav-main--link-l2:hover
+{
+  color: #84bb55 !important;
+}
+
+.bck-nav-main--link-l2--grey-dark:focus,
+.bck-nav-main--link-l2--grey-dark:hover,
+.bck-nav-main--link-l2--grey-dark::before,
+.bck-nav-main--link-l2--grey-dark .bck-nav-main--link-l2:hover
+{
+  color: #6c6c6c !important;
+}
+
+.bck-nav-main--link-l2--grey-xdark:focus,
+.bck-nav-main--link-l2--grey-xdark:hover,
+.bck-nav-main--link-l2--grey-xdark::before,
+.bck-nav-main--link-l2--grey-xdark .bck-nav-main--link-l2:hover
+{
+  color: #575756 !important;
+}
+
+.bck-nav-main--link-l2--orangered:focus,
+.bck-nav-main--link-l2--orangered:hover,
+.bck-nav-main--link-l2--orangered::before,
+.bck-nav-main--link-l2--orangered .bck-nav-main--link-l2:hover
+{
+  color: orangered !important;
+}
+
+.bck-nav-main--link-l2--orange:focus,
+.bck-nav-main--link-l2--orange:hover,
+.bck-nav-main--link-l2--orange::before,
+.bck-nav-main--link-l2--orange .bck-nav-main--link-l2:hover
+{
+  color: #ec6607 !important;
+}
+
+.bck-nav-main--link-l2--orange-light:focus,
+.bck-nav-main--link-l2--orange-light:hover,
+.bck-nav-main--link-l2--orange-light::before,
+.bck-nav-main--link-l2--orange-light .bck-nav-main--link-l2:hover
+{
+  color: #ed7c42 !important;
+}
+
+.bck-nav-main--link-l2--orange-xlight:focus,
+.bck-nav-main--link-l2--orange-xlight:hover,
+.bck-nav-main--link-l2--orange-xlight::before,
+.bck-nav-main--link-l2--orange-xlight .bck-nav-main--link-l2:hover
+{
+  color: #f39b29 !important;
+}
+
+.bck-nav-main--link-l2--pink:focus,
+.bck-nav-main--link-l2--pink:hover,
+.bck-nav-main--link-l2--pink::before,
+.bck-nav-main--link-l2--pink .bck-nav-main--link-l2:hover
+{
+  color: #c30065 !important;
+}
+
+.bck-nav-main--link-l2--pink-light:focus,
+.bck-nav-main--link-l2--pink-light:hover,
+.bck-nav-main--link-l2--pink-light::before,
+.bck-nav-main--link-l2--pink-light .bck-nav-main--link-l2:hover
+{
+  color: #f195be !important;
+}
+
+.bck-nav-main--link-l2--pink-salmon:focus,
+.bck-nav-main--link-l2--pink-salmon:hover,
+.bck-nav-main--link-l2--pink-salmon::before,
+.bck-nav-main--link-l2--pink-salmon .bck-nav-main--link-l2:hover
+{
+  color: #f5e6e3 !important;
+}
+
+.bck-nav-main--link-l2--purple:focus,
+.bck-nav-main--link-l2--purple:hover,
+.bck-nav-main--link-l2--purple::before,
+.bck-nav-main--link-l2--purple .bck-nav-main--link-l2:hover
+{
+  color: #6e358b !important;
+}
+
+.bck-nav-main--link-l2--purple-light:focus,
+.bck-nav-main--link-l2--purple-light:hover,
+.bck-nav-main--link-l2--purple-light::before,
+.bck-nav-main--link-l2--purple-light .bck-nav-main--link-l2:hover
+{
+  color: #a790c4 !important;
+}
+
+.bck-nav-main--link-l2--red:focus,
+.bck-nav-main--link-l2--red:hover,
+.bck-nav-main--link-l2--red::before,
+.bck-nav-main--link-l2--red .bck-nav-main--link-l2:hover
+{
+  color: #c8181a !important;
+}
+
+.bck-nav-main--link-l2--red-corporate:focus,
+.bck-nav-main--link-l2--red-corporate:hover,
+.bck-nav-main--link-l2--red-corporate::before,
+.bck-nav-main--link-l2--red-corporate .bck-nav-main--link-l2:hover
+{
+  color: #da291c !important;
+}
+
+.bck-nav-main--link-l2--turquoise:focus,
+.bck-nav-main--link-l2--turquoise:hover,
+.bck-nav-main--link-l2--turquoise::before,
+.bck-nav-main--link-l2--turquoise .bck-nav-main--link-l2:hover
+{
+  color: #007d99 !important;
+}
+
+.bck-nav-main--link-l2--turquoise-light:focus,
+.bck-nav-main--link-l2--turquoise-light:hover,
+.bck-nav-main--link-l2--turquoise-light::before,
+.bck-nav-main--link-l2--turquoise-light .bck-nav-main--link-l2:hover
+{
+  color: #007d99 !important;
+}
+
+.bck-nav-main--link-l2--yellow:focus,
+.bck-nav-main--link-l2--yellow:hover,
+.bck-nav-main--link-l2--yellow::before,
+.bck-nav-main--link-l2--yellow .bck-nav-main--link-l2:hover
+{
+  color: #f6a200 !important;
+}
+
+.bck-nav-main--link-l2--yellow-light:focus,
+.bck-nav-main--link-l2--yellow-light:hover,
+.bck-nav-main--link-l2--yellow-light::before,
+.bck-nav-main--link-l2--yellow-light .bck-nav-main--link-l2:hover
+{
+  color: yellow !important;
+}
+
+.bck-nav-main--link-l2--brown:focus,
+.bck-nav-main--link-l2--brown:hover,
+.bck-nav-main--link-l2--brown::before,
+.bck-nav-main--link-l2--brown .bck-nav-main--link-l2:hover
+{
+  color: saddlebrown !important;
+}
+
+.bck-nav-main--item-l2, .bck-nav-main--item-l2 li {
+  display: block;
+}
+
+.bck-nav-main--item-l2 ul a, .bck-nav-main--link-l2 {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0 0 1em;
+  padding: 0 0 0 2.5em;
+  color: #21215d;
+  font-family: Open Sans,Arial, serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: none;
+  position: relative;
+  transition: all .1s ease-in;
+
+  &:hover {
+    color: #e41b13;
+  }
+}

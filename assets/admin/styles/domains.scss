@@ -1,0 +1,89 @@
+@import '../../styles/variables';
+
+.domain-color-sample {
+  display: block;
+  width: 40px;
+  height: 40px;
+
+  &.default {
+    background: $domain-color-default;
+  }
+  &.blue {
+    background: $domain-color-blue;
+  }
+  &.blue-corporate {
+    background: $domain-color-blue-corporate;
+  }
+  &.blue-light {
+    background: $domain-color-blue-light;
+  }
+  &.blue-sky {
+    background: $domain-color-blue-sky;
+  }
+  &.blue-xlight {
+    background: $domain-color-blue-xlight;
+  }
+  &.green {
+    background: $domain-color-green;
+  }
+  &.green-xlight {
+    background: $domain-color-green-xlight;
+  }
+  &.green-xxlight {
+    background: $domain-color-green-xxlight;
+  }
+  &.green-dark {
+    background: $domain-color-green-dark;
+  }
+  &.green-xdark {
+    background: $domain-color-green-xdark;
+  }
+  &.orangered {
+    background: $domain-color-orangered;
+  }
+  &.orange {
+    background: $domain-color-orange;
+  }
+  &.orange-light {
+    background: $domain-color-orange-light;
+  }
+  &.orange-xlight {
+    background: $domain-color-orange-xlight;
+  }
+  &.pink {
+    background: $domain-color-pink;
+  }
+  &.pink-light {
+    background: $domain-color-pink-light;
+  }
+  &.pink-salmon {
+    background: $domain-color-pink-salmon;
+  }
+  &.purple {
+    background: $domain-color-purple;
+  }
+  &.purple-light {
+    background: $domain-color-purple-light;
+  }
+  &.red {
+    background: $domain-color-red;
+  }
+  &.red-corporate {
+    background: $domain-color-red-corporate;
+  }
+  &.turquoise {
+    background: $domain-color-turquoise;
+  }
+  &.turquoise-light {
+    background: $domain-color-turquoise-light;
+  }
+  &.yellow {
+    background: $domain-color-yellow;
+  }
+  &.yellow-light {
+    background: $domain-color-yellow-light;
+  }
+  &.brown {
+    background: $domain-color-brown;
+  }
+}

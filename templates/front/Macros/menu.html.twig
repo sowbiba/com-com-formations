@@ -1,0 +1,37 @@
+{% macro printLinkClass(index) %}
+    {% if 1 == index %}
+        {{ 'nav-main--link-l2--green' }}
+    {% elseif 2 == index %}
+        {{ 'nav-main--link-l2--orangered' }}
+    {% elseif 3 == index %}
+        {{ 'nav-main--link-l2--yellow' }}
+    {% elseif 4 == index %}
+        {{ 'nav-main--link-l2--purple-light' }}
+    {% elseif 5 == index %}
+        {{ 'nav-main--link-l2--turquoise' }}
+    {% elseif 6 == index %}
+        {{ 'nav-main--link-l2--pink' }}
+    {% elseif 7 == index %}
+        {{ 'nav-main--link-l2--brown' }}
+    {% elseif 8 == index %}
+        {{ 'nav-main--link-l2--blue-sky' }}
+    {% elseif 9 == index %}
+        {{ 'nav-main--link-l2--green-xxlight' }}
+    {% elseif 10 == index %}
+        {{ 'nav-main--link-l2--orange-light' }}
+    {% elseif 11 == index %}
+        {{ 'nav-main--link-l2--purple' }}
+    {% elseif 12 == index %}
+        {{ 'nav-main--link-l2--blue-corporate' }}
+    {% elseif 13 == index %}
+        {{ 'nav-main--link-l2--grey-dark' }}
+    {% elseif 14 == index %}
+        {{ 'nav-main--link-l2--pink-salmon' }}
+    {% elseif 15 == index %}
+        {{ 'nav-main--link-l2--purple' }}
+    {% elseif 16 == index %}
+        {{ 'nav-main--link-l2--blue' }}
+    {% else %}
+        {{ 'nav-main--link-l2--default' }}
+    {% endif %}
+{% endmacro %}

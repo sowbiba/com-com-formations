@@ -1,0 +1,8 @@
+{% if formationSection.content is not empty %}
+<div class="underlined-chapter formation-chapter">
+    <h2>{{ formationSection.section.title }}</h2>
+    <div class="underlined-chapter-content formation-chapter-content">
+        {{ formationSection.content|raw }}
+    </div>
+</div>
+{% endif %}

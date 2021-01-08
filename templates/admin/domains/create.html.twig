@@ -1,0 +1,21 @@
+{% extends 'admin/base.html.twig' %}
+
+{% set active_menu = 'domains' %}
+{% set container_class = 'container-sm' %}
+
+{% block title %}{{ 'Create domain'|trans }}{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('domains') }}
+{% endblock %}
+
+{% block content %}
+    <h1>{{ 'Create domain'|trans }}</h1>
+    {% include 'admin/domains/Blocks/form.html.twig' %}
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('domains') }}
+{% endblock %}

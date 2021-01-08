@@ -1,0 +1,41 @@
+{{ form_start(form) }}
+<table class="table table-responsive-xl table-borderless">
+    <tbody>
+    <tr>
+        <td class="col-form-label">
+            {{ form_label(form.username) }}
+            {{ form_errors(form.username) }}
+        </td>
+        <td>
+            {{ form_widget(form.username) }}
+        </td>
+    </tr>
+    <tr>
+        <td class="col-form-label">
+            {{ form_label(form.email) }}
+            {{ form_errors(form.email) }}
+        </td>
+        <td>
+            {{ form_widget(form.email) }}
+        </td>
+    </tr>
+    <tr>
+        <td class="col-form-label">
+            {{ form_label(form.enabled) }}
+            {{ form_errors(form.enabled) }}
+        </td>
+        <td>
+            {{ form_widget(form.enabled) }}
+        </td>
+    </tr>
+    <tr><td colspan="2"></td></tr>
+    <tr><td colspan="2"></td></tr>
+    <tr>
+        <td class="submit" colspan="2">
+            <a href="{{ path('app_admin_users') }}" class="btn btn-light form-action-button">{{ 'Cancel'|trans }}</a>
+            <button type="submit" class="btn btn-primary form-action-button">{{ 'Submit'|trans }}</button>
+        </td>
+    </tr>
+    </tbody>
+</table>
+{{ form_end(form) }}

@@ -1,0 +1,118 @@
+No: Non
+Yes: Oui
+OK: OK
+Yes confirm: Oui, je confirme
+enabled: Actif
+Enabled: Actif
+
+# Attributes types
+string: Texte
+numeric: Numérique
+amount: Montant
+boolean: Booléen (Oui/Non)
+choice: Liste de choix
+
+# General
+Title: Titre
+Value: Valeur
+
+# Users
+Username: Identifiant
+Address: Adresse
+Zipcode: Code postal
+City: Ville
+Plain password: Mot de passe
+Agree terms: 'Accepter les conditions d''utilisation'
+Register user: 'Création d''utilisateur'
+Users list: 'Liste d''utilisateurs'
+Add an user: Ajouter un utilisateur
+Delete this user: Supprimer cet utilisateur
+User successfully saved: Utilisateur sauvegardé avec succès
+'User #%id% successfully updated': 'Les modifications sur l''utilisateur #%id% ont été sauvegardées avec succès'
+
+# Formations
+Formations list: Liste des formations
+Create formation: Nouvelle formation
+Edit formation: Editer la formation
+Add an intervenant to formation: Ajouter un intervenant à la formation
+Back to Edit formation: 'Retour à l''édition de la formation'
+Save and Edit formation domains: 'Enregistrer et Editer les domaines de formation'
+Edit formation domains: 'Domaines de la formation'
+Save and Edit formation intervenants: 'Enregistrer et Editer les intervenants de la formation'
+Edit formation intervenants: 'Intervenants de la formation'
+Save and Edit formation dates: 'Enregistrer et Editer les dates de formation'
+Edit formation dates: 'Dates de formation'
+Save and Edit formation sections: 'Enregistrer et Editer la présentation de la formation'
+Edit formation sections: 'Présentation de la formation'
+Save and Edit formation files: 'Enregistrer et Editer les fichiers de la formation'
+Edit formation files: 'Fichiers de la formation'
+Save and Edit formation formations linked: 'Enregistrer et Gérer les liens entre formations'
+Edit formation formations linked: 'Liens entre formations'
+LEVEL_ALL: TOUT NIVEAU
+LEVEL_INITIATION: INITIATION
+LEVEL_PERFECTIONING: PERFECTIONNEMENT
+LEVEL_EXPERTISE: EXPERTISE
+Level: Niveau
+Reference: Référence
+Duration: Durée
+Ask for informations: Demande de renseignements
+View the program: Voir le programme
+Program: Programme
+Intervenants: Intervenants
+Extras: Les plus
+Dates: Dates
+Pedagogic means: Moyens pédagogiques
+Formations linked: Formations complémentaires
+Formation dates: Dates des sessions
+Regular dates: Présentiel
+E-learning dates: A distance
+Our suggested formations: 'Itinéraire pédagogique : Nos formations conseillées'
+
+# Domains
+Domains: Domaines
+Create domain: Créer un domaine
+Edit domain: Editer le domaine
+
+icon help: 'Voir les icônes sur %link_start%https://boxicons.com/%link_end% et entrer le nom de l''icône choisie'
+
+# Forms
+Cancel: Annuler
+Quit: Quitter
+Terminate: Terminer
+Submit: Enregistrer
+Search: Rechercher
+An error occurred when saving: 'Impossible d''enregistrer les modifications'
+
+# Grids
+Edit: Editer
+Delete: Supprimer
+ID: ID
+Name: Nom
+Type: Type
+Actions: Actions
+Previous: Précédent
+Next: Suivant
+
+# Nav bar
+Administration: Administration
+Home: Accueil
+Users: Utilisateurs
+Formations: Formations
+
+# Page titles
+Site title: Com Com Formations
+Edit user: Editer l'utilisateur
+
+# Security
+User successfully registered.: Compte utilisateur créé avec succès
+
+# Footer
+About us: A propos
+Follow us: Nous suivre
+Subscribe to newsletter: Inscrivez-vous à notre newsletter
+Enter your mail: Saisissez votre adresse mail
+Newsletter subscription failed: 'Echec de l''inscription à la newsletter. Merci de vérifier la validité de votre adresse email'
+Thanks for your newsletter subscription: 'Merci de votre inscription à la newsletter. Vous recevrez en priorité nos futures communications.'
+By email: Par mail
+By phone: Par téléphone
+By letter: Par courrier

@@ -1,0 +1,125 @@
+{
+  "entrypoints": {
+    "app": {
+      "js": [
+        "/build/runtime.js",
+        "/build/app.js"
+      ],
+      "css": [
+        "/build/app.css"
+      ]
+    },
+    "admin_app": {
+      "js": [
+        "/build/runtime.js",
+        "/build/vendors~admin_app~domains~encarts~formations~front_app~home~intervenants~users.js",
+        "/build/vendors~admin_app~domains~encarts~formations~home~intervenants~users.js",
+        "/build/admin_app~domains~encarts~formations~front_app~home~intervenants~users.js",
+        "/build/admin_app~domains~encarts~formations~home~intervenants~users.js",
+        "/build/admin_app.js"
+      ],
+      "css": [
+        "/build/vendors~admin_app~domains~encarts~formations~front_app~home~intervenants~users.css",
+        "/build/admin_app~domains~encarts~formations~home~intervenants~users.css"
+      ]
+    },
+    "front_app": {
+      "js": [
+        "/build/runtime.js",
+        "/build/vendors~admin_app~domains~encarts~formations~front_app~home~intervenants~users.js",
+        "/build/admin_app~domains~encarts~formations~front_app~home~intervenants~users.js",
+        "/build/front_app.js"
+      ],
+      "css": [
+        "/build/vendors~admin_app~domains~encarts~formations~front_app~home~intervenants~users.css",
+        "/build/front_app.css"
+      ]
+    },
+    "home": {
+      "js": [
+        "/build/runtime.js",
+        "/build/vendors~admin_app~domains~encarts~formations~front_app~home~intervenants~users.js",
+        "/build/vendors~admin_app~domains~encarts~formations~home~intervenants~users.js",
+        "/build/admin_app~domains~encarts~formations~front_app~home~intervenants~users.js",
+        "/build/admin_app~domains~encarts~formations~home~intervenants~users.js",
+        "/build/home.js"
+      ],
+      "css": [
+        "/build/vendors~admin_app~domains~encarts~formations~front_app~home~intervenants~users.css",
+        "/build/admin_app~domains~encarts~formations~home~intervenants~users.css",
+        "/build/home.css"
+      ]
+    },
+    "users": {
+      "js": [
+        "/build/runtime.js",
+        "/build/vendors~admin_app~domains~encarts~formations~front_app~home~intervenants~users.js",
+        "/build/vendors~admin_app~domains~encarts~formations~home~intervenants~users.js",
+        "/build/admin_app~domains~encarts~formations~front_app~home~intervenants~users.js",
+        "/build/admin_app~domains~encarts~formations~home~intervenants~users.js",
+        "/build/users.js"
+      ],
+      "css": [
+        "/build/vendors~admin_app~domains~encarts~formations~front_app~home~intervenants~users.css",
+        "/build/admin_app~domains~encarts~formations~home~intervenants~users.css"
+      ]
+    },
+    "formations": {
+      "js": [
+        "/build/runtime.js",
+        "/build/vendors~admin_app~domains~encarts~formations~front_app~home~intervenants~users.js",
+        "/build/vendors~admin_app~domains~encarts~formations~home~intervenants~users.js",
+        "/build/admin_app~domains~encarts~formations~front_app~home~intervenants~users.js",
+        "/build/admin_app~domains~encarts~formations~home~intervenants~users.js",
+        "/build/formations.js"
+      ],
+      "css": [
+        "/build/vendors~admin_app~domains~encarts~formations~front_app~home~intervenants~users.css",
+        "/build/admin_app~domains~encarts~formations~home~intervenants~users.css"
+      ]
+    },
+    "intervenants": {
+      "js": [
+        "/build/runtime.js",
+        "/build/vendors~admin_app~domains~encarts~formations~front_app~home~intervenants~users.js",
+        "/build/vendors~admin_app~domains~encarts~formations~home~intervenants~users.js",
+        "/build/admin_app~domains~encarts~formations~front_app~home~intervenants~users.js",
+        "/build/admin_app~domains~encarts~formations~home~intervenants~users.js",
+        "/build/intervenants.js"
+      ],
+      "css": [
+        "/build/vendors~admin_app~domains~encarts~formations~front_app~home~intervenants~users.css",
+        "/build/admin_app~domains~encarts~formations~home~intervenants~users.css"
+      ]
+    },
+    "domains": {
+      "js": [
+        "/build/runtime.js",
+        "/build/vendors~admin_app~domains~encarts~formations~front_app~home~intervenants~users.js",
+        "/build/vendors~admin_app~domains~encarts~formations~home~intervenants~users.js",
+        "/build/admin_app~domains~encarts~formations~front_app~home~intervenants~users.js",
+        "/build/admin_app~domains~encarts~formations~home~intervenants~users.js",
+        "/build/domains.js"
+      ],
+      "css": [
+        "/build/vendors~admin_app~domains~encarts~formations~front_app~home~intervenants~users.css",
+        "/build/admin_app~domains~encarts~formations~home~intervenants~users.css",
+        "/build/domains.css"
+      ]
+    },
+    "encarts": {
+      "js": [
+        "/build/runtime.js",
+        "/build/vendors~admin_app~domains~encarts~formations~front_app~home~intervenants~users.js",
+        "/build/vendors~admin_app~domains~encarts~formations~home~intervenants~users.js",
+        "/build/admin_app~domains~encarts~formations~front_app~home~intervenants~users.js",
+        "/build/admin_app~domains~encarts~formations~home~intervenants~users.js",
+        "/build/encarts.js"
+      ],
+      "css": [
+        "/build/vendors~admin_app~domains~encarts~formations~front_app~home~intervenants~users.css",
+        "/build/admin_app~domains~encarts~formations~home~intervenants~users.css"
+      ]
+    }
+  }
+}

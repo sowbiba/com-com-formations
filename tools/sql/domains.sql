@@ -1,0 +1,11 @@
+INSERT IGNORE INTO domains(`title`, `slug`) VALUES ('Fiscalité', 'fiscalite');
+INSERT IGNORE INTO domains(`title`, `slug`) VALUES ('Patrimoine', 'patrimoine');
+INSERT IGNORE INTO domains(`title`, `slug`) VALUES ('Immobilier', 'immobilier');
+INSERT IGNORE INTO domains(`title`, `slug`) VALUES ('Comptabilité', 'comptabilite');
+INSERT IGNORE INTO domains(`title`, `slug`) VALUES ('Compliance, audit et risques', 'compliance-audit-risques');
+INSERT IGNORE INTO domains(`title`, `slug`) VALUES ('Gestion-Finance', 'gestion-finances');
+INSERT IGNORE INTO domains(`title`, `slug`) VALUES ('Paie', 'paie');
+INSERT IGNORE INTO domains(`title`, `slug`) VALUES ('Droit social-GRH', 'droit-social-grh');
+INSERT IGNORE INTO domains(`title`, `slug`) VALUES ('Droit des affaires', 'droit-des-affaires');
+INSERT IGNORE INTO domains(`title`, `slug`) VALUES ('Banque-Assurance', 'banque-assurance');
+INSERT IGNORE INTO domains(`title`, `slug`) VALUES ('Performance individuelle et collective', 'performance-individuelle-et-collective');

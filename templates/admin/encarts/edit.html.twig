@@ -1,0 +1,22 @@
+{% extends 'admin/base.html.twig' %}
+
+{% set active_menu = 'encarts' %}
+{% set container_class = 'container-sm' %}
+
+{% block title %}{{ 'Edit encart'|trans }}{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('encarts') }}
+{% endblock %}
+
+{% block content %}
+    <h1>{{ 'Edit encart'|trans }}</h1>
+    <h3><em>Encart : {{ encart.title }}</em></h3>
+    {% include 'admin/encarts/Blocks/form.html.twig' %}
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('encarts') }}
+{% endblock %}

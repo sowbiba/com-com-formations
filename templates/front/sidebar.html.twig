@@ -1,0 +1,26 @@
+<div class="encarts">
+    {% for encart in encarts %}
+        <div class="encart">
+            <div class="title">{{ encart.title }}</div>
+
+            {% if encart.image %}
+                <div class="image"><img src="{{ asset(encart.image) }}" alt="{{ encart.title }}" title="{{ encart.title }}" /></div>
+                {% if encart.imageSubtitle %}
+                    <div class="image-subtitle">{{ encart.imageSubtitle }}</div>
+                {% endif %}
+            {% endif %}
+
+            {% if encart.content %}
+                <div class="content">{{ encart.content|raw }}</div>
+            {% endif %}
+
+            {% if encart.buttonLink %}
+                <div class="link">
+                    <a href="{{ encart.buttonLink }}" class="btn common-button">
+                        {% if encart.buttonLink %}{{ encart.buttonText }}{% else %}{{ 'See'|trans }}{% endif %}
+                    </a>
+                </div>
+            {% endif %}
+        </div>
+    {% endfor %}
+</div>

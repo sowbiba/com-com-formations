@@ -1,0 +1,86 @@
+{{ form_start(form) }}
+<table class="table table-responsive-xl table-borderless">
+    <tbody>
+    <tr>
+        <td class="col-form-label">
+            {{ form_label(form.title) }}
+            {{ form_errors(form.title) }}
+        </td>
+        <td>
+            {{ form_widget(form.title) }}
+        </td>
+    </tr>
+    <tr>
+        <td class="col-form-label">
+            {{ form_label(form.formationType) }}
+            {{ form_errors(form.formationType) }}
+        </td>
+        <td>
+            {{ form_widget(form.formationType) }}
+        </td>
+    </tr>
+    <tr>
+        <td class="col-form-label">
+            {{ form_label(form.level) }}
+            {{ form_errors(form.level) }}
+        </td>
+        <td>
+            {{ form_widget(form.level) }}
+        </td>
+    </tr>
+    <tr>
+        <td class="col-form-label">
+            {{ form_label(form.reference) }}
+            {{ form_errors(form.reference) }}
+        </td>
+        <td>
+            {{ form_widget(form.reference) }}
+        </td>
+    </tr>
+    <tr>
+        <td class="col-form-label">
+            {{ form_label(form.duration) }}
+            {{ form_errors(form.duration) }}
+        </td>
+        <td>
+            {{ form_widget(form.duration) }}
+        </td>
+    </tr>
+    <tr>
+        <td class="col-form-label">
+            {{ form_label(form.program) }}
+            {{ form_errors(form.program) }}
+        </td>
+        <td>
+            {{ form_widget(form.program) }}
+        </td>
+    </tr>
+    <tr>
+        <td class="col-form-label">
+            {{ form_label(form.extras) }}
+            {{ form_errors(form.extras) }}
+        </td>
+        <td>
+            {{ form_widget(form.extras) }}
+        </td>
+    </tr>
+    <tr>
+        <td class="col-form-label">
+            {{ form_label(form.pedagogicMeans) }}
+            {{ form_errors(form.pedagogicMeans) }}
+        </td>
+        <td>
+            {{ form_widget(form.pedagogicMeans) }}
+        </td>
+    </tr>
+    <tr><td colspan="2"></td></tr>
+    <tr><td colspan="2"></td></tr>
+    <tr>
+        <td class="submit" colspan="2">
+            <a href="{{ path('app_admin_formations') }}" class="btn btn-light form-action-button">{{ 'Quit'|trans }}</a>
+            <button type="submit" class="btn btn-success form-action-button">{{ 'Save and Edit formation domains'|trans }}</button>
+        </td>
+    </tr>
+    </tbody>
+</table>
+{{ form_end(form) }}

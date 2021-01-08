@@ -1,0 +1,23 @@
+{% macro printFileRow(formationFile, formation) %}
+    {% set fileExtension = formationFile.file|split('.')|last %}
+    {% if 'pdf' == fileExtension %}
+        {% set fileIcon = 'bxs-file-pdf' %}
+    {% elseif 'doc' == fileExtension or 'docx' == fileExtension %}
+        {% set fileIcon = 'bxs-file-doc' %}
+    {% else %}
+        {% set fileIcon = 'bxs-file-export' %}
+    {% endif %}
+    <tr>
+        <td>
+            <a href="{{ formationFile.file }}" target="_blank">
+                <i class="icon bx {{ fileIcon }}" style="font-size: 28px;color: green;"></i>
+                {{ formationFile.fancyName }}
+            </a>
+        </td>
+        <td class="col-actions">
+            <a href="#" data-href="{{ path('app_admin_formations_files_delete', { 'id': formation.id, 'formationFileId': formationFile.id }) }}" class="btn btn-danger table-action-button" title="{{ 'Delete'|trans }}" data-toggle="modal" data-target="#confirm-delete">
+                <span class="oi oi-trash" aria-hidden="true"></span>
+            </a>
+        </td>
+    </tr>
+{% endmacro %}

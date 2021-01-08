@@ -1,0 +1,35 @@
+<section id="about" class="about">
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-xl-5 col-lg-6 video-box d-flex justify-content-center align-items-stretch">
+                <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>
+            </div>
+
+            <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5 about-content">
+                <h3>{{ content.middleBlockTitle|raw }}</h3>
+                <p>{{ content.middleBlockSubtitle|raw }}</p>
+
+                <div class="icon-box">
+                    <div class="icon"><i class="bx bxl-{{ content.middleBlockBoxOneIcon }} bxs-{{ content.middleBlockBoxOneIcon }} bx-{{ content.middleBlockBoxOneIcon }}"></i></div>
+                    <h4 class="title"><a href="">{{ content.middleBlockBoxOneTitle|raw }}</a></h4>
+                    <p class="description">{{ content.middleBlockBoxOneContent|raw }}</p>
+                </div>
+
+                <div class="icon-box">
+                    <div class="icon"><i class="bx bxl-{{ content.middleBlockBoxTwoIcon }} bxs-{{ content.middleBlockBoxTwoIcon }} bx-{{ content.middleBlockBoxTwoIcon }}"></i></div>
+                    <h4 class="title"><a href="">{{ content.middleBlockBoxTwoTitle|raw }}</a></h4>
+                    <p class="description">{{ content.middleBlockBoxTwoContent|raw }}</p>
+                </div>
+
+                <div class="icon-box">
+                    <div class="icon"><i class="bx bxl-{{ content.middleBlockBoxThreeIcon }} bxs-{{ content.middleBlockBoxThreeIcon }} bx-{{ content.middleBlockBoxThreeIcon }}"></i></div>
+                    <h4 class="title"><a href="">{{ content.middleBlockBoxThreeTitle|raw }}</a></h4>
+                    <p class="description">{{ content.middleBlockBoxThreeContent|raw }}</p>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>

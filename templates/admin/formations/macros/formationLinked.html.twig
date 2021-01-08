@@ -1,0 +1,15 @@
+{% macro printFormationLinkedRow(formationLinked, formation) %}
+    <tr>
+        <td>
+            {{ formationLinked.id }}
+        </td>
+        <td>
+            {{ formationLinked.title }}
+        </td>
+        <td class="col-actions">
+            <a href="#" data-href="{{ path('app_admin_formations_formations_unlink', { 'id': formation.id, 'formationLinkedId': formationLinked.id }) }}" class="btn btn-danger table-action-button" title="{{ 'Delete'|trans }}" data-toggle="modal" data-target="#confirm-delete">
+                <span class="oi oi-trash" aria-hidden="true"></span>
+            </a>
+        </td>
+    </tr>
+{% endmacro %}

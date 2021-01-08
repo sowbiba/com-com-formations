@@ -1,0 +1,18 @@
+{% macro printDateRow(formationDate, formation) %}
+    <tr>
+        <td>
+            {{ formationDate.date }}
+        </td>
+        <td>
+            {{ formationDate.hours }}
+        </td>
+        <td>
+            {{ true is same as formationDate.eLearning ? 'Yes'|trans : 'No'|trans }}
+        </td>
+        <td class="col-actions">
+            <a href="#" data-href="{{ path('app_admin_formations_dates_delete', { 'id': formation.id, 'formationDateId': formationDate.id }) }}" class="btn btn-danger table-action-button" title="{{ 'Delete'|trans }}" data-toggle="modal" data-target="#confirm-delete">
+                <span class="oi oi-trash" aria-hidden="true"></span>
+            </a>
+        </td>
+    </tr>
+{% endmacro %}

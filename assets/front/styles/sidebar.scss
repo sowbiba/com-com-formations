@@ -1,0 +1,57 @@
+.sidebar-content {
+  margin-top: 1.5em;
+
+  .encarts {
+
+    .encart {
+      padding: 1em 2em;
+      margin-bottom: 1.5em;
+      background: #FFFFFF;
+
+      .title {
+          margin: .5em 0 1em;
+          color: #21215d;
+          font-family: Open Sans Condensed,Arial;
+          font-style: normal;
+          font-weight: 300;
+          font-size: 28px;
+          line-height: 1;
+          text-transform: uppercase;
+
+        &::before {
+          display: block;
+          content: "";
+          width: 50px;
+          border: 2px solid #4babad;
+          margin: .5em 0;
+        }
+      }
+
+      .image {
+        text-align: center;
+
+        img {
+          max-width: 100%;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        margin: .5em 0 1em;
+      }
+
+      .image-subtitle {
+        color: #21215d;
+        font-style: italic;
+        font-weight: 700;
+        font-family: Open Sans Condensed,Arial;
+        font-size: 20px;
+        margin: .5em 0 1em;
+        text-align: center;
+      }
+
+      .content {
+        margin: .5em 0 1em;
+        text-align: justify;
+      }
+    }
+  }
+}

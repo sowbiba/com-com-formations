@@ -1,0 +1,100 @@
+{% extends 'admin/base.html.twig' %}
+
+{% set active_menu = 'encarts' %}
+{% set route = app.request.attributes.get('_route') %}
+
+{% block title %}{{ 'Encarts'|trans }}{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('encarts') }}
+{% endblock %}
+
+{% block header_buttons %}
+    <a href="{{ path('app_admin_encarts_create') }}" class="btn navbar-btn btn-success float-right header-action-button" title="{{ 'Create encart'|trans }}">
+        <span class="oi oi-plus" aria-hidden="true"></span>
+        {{ 'Create encart'|trans }}
+    </a>
+{% endblock %}
+
+{% block content %}
+    <h1>{{ 'Encarts list'|trans }}</h1>
+    <table class="table table-responsive-xl table-bordered">
+        <thead>
+            <tr>
+                <th class="col-number">
+                    <a href="
+                    {{ path(route, app.request.query.all|merge(
+                        {
+                            'sort': 'id',
+                            'direction': sortField is same as('id') and sortDirection is same as('ASC') ? 'DESC' : 'ASC'
+                        }
+                    )) }}">
+                        {{ 'ID'|trans }}{% include 'admin/Blocks/sorting.html.twig' with { 'field': 'id' } %}
+                    </a>
+                </th>
+                <th>
+                    <a href="
+                    {{ path(route, app.request.query.all|merge(
+                        {
+                            'sort': 'title',
+                            'direction': sortField is same as('title') and sortDirection is same as('ASC') ? 'DESC' : 'ASC'
+                        }
+                    )) }}">
+                        {{ 'Title'|trans }}{% include 'admin/Blocks/sorting.html.twig' with { 'field': 'title' } %}
+                    </a>
+                </th>
+                <th>{{ 'Actions'|trans }}</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for encart in pager.currentPageResults %}
+            <tr>
+                <td class="col-number">#{{ encart.id }}</td>
+                <td>{{ encart.title }}</td>
+                <td class="col-actions">
+                    <a href="{{ path('app_admin_encarts_edit', { 'id': encart.id }) }}" class="btn btn-primary table-action-button" title="{{ 'Edit'|trans }}">
+                        <span class="oi oi-pencil" aria-hidden="true"></span>
+                    </a>
+                    <a href="#" data-href="{{ path('app_admin_encarts_delete', { 'id': encart.id }) }}" class="btn btn-danger table-action-button" title="{{ 'Delete'|trans }}" data-toggle="modal" data-target="#confirm-delete">
+                        <span class="oi oi-trash" aria-hidden="true"></span>
+                    </a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    {% if pager.nbPages > 1 %}
+        <div class="pagerfanta">
+            {{ pagerfanta(pager, 'twitter_bootstrap4') }}
+        </div>
+    {% endif %}
+{% endblock %}
+
+{% block modal %}
+    <div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">{{ 'Confirm delete'|trans }}</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    {{ 'Are you sure you want to delete?'|trans }}
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default btn-cancel" data-dismiss="modal">{{ 'Cancel'|trans }}</button>
+                    <a class="btn btn-danger btn-ok">{{ 'Delete'|trans }}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('encarts') }}
+{% endblock %}

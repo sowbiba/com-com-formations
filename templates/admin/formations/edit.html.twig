@@ -1,0 +1,22 @@
+{% extends 'admin/base.html.twig' %}
+
+{% set active_menu = 'formations' %}
+{% set container_class = 'container-sm' %}
+
+{% block title %}{{ 'Edit formation'|trans }}{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('formations') }}
+{% endblock %}
+
+{% block content %}
+    <h1>{{ 'Edit formation'|trans }}</h1>
+    <h3><em>Formation : {{ formation.title }}</em></h3>
+    {% include 'admin/formations/Blocks/form.html.twig' %}
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('formations') }}
+{% endblock %}

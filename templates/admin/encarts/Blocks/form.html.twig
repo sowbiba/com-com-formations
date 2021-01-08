@@ -1,0 +1,84 @@
+{{ form_start(form) }}
+<table class="table table-responsive-xl table-borderless">
+    <tbody>
+    <tr>
+        <td class="col-form-label">
+            {{ form_label(form.title) }}
+            {{ form_errors(form.title) }}
+        </td>
+        <td>
+            {{ form_widget(form.title) }}
+        </td>
+    </tr>
+    <tr>
+        <td class="col-form-label">
+            {{ form_label(form.image) }}
+            {{ form_errors(form.image) }}
+        </td>
+        <td>
+            {% if form.image.vars.data %}
+                <div class="col-3 pull-left text-center padding-0">
+                    <img src="{{ asset(form.image.vars.data) }}" style="max-width: 100px;max-height: 100px;" alt="{{ encart.title }}" title="{{ encart.title }}"/>
+                </div>
+            {% endif %}
+            <div class="{% if form.image.vars.data %}col-9{% else %}col-12{% endif%} pull-right padding-0">
+                {{ form_widget(form.image) }}
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class="col-form-label">
+            {{ form_label(form.imageSubtitle) }}
+            {{ form_errors(form.imageSubtitle) }}
+        </td>
+        <td>
+            {{ form_widget(form.imageSubtitle) }}
+        </td>
+    </tr>
+    <tr>
+        <td class="col-form-label">
+            {{ form_label(form.content) }}
+            {{ form_errors(form.content) }}
+        </td>
+        <td>
+            {{ form_widget(form.content) }}
+        </td>
+    </tr>
+    <tr>
+        <td class="col-form-label">
+            {{ form_label(form.buttonText) }}
+            {{ form_errors(form.buttonText) }}
+        </td>
+        <td>
+            {{ form_widget(form.buttonText) }}
+        </td>
+    </tr>
+    <tr>
+        <td class="col-form-label">
+            {{ form_label(form.buttonLink) }}
+            {{ form_errors(form.buttonLink) }}
+        </td>
+        <td>
+            {{ form_widget(form.buttonLink) }}
+        </td>
+    </tr>
+    <tr>
+        <td class="col-form-label">
+            {{ form_label(form.domain) }}
+            {{ form_errors(form.domain) }}
+        </td>
+        <td>
+            {{ form_widget(form.domain) }}
+        </td>
+    </tr>
+    <tr><td colspan="2"></td></tr>
+    <tr><td colspan="2"></td></tr>
+    <tr>
+        <td class="submit" colspan="2">
+            <a href="{{ path('app_admin_encarts') }}" class="btn btn-light form-action-button">{{ 'Quit'|trans }}</a>
+            <button type="submit" class="btn btn-success form-action-button">{{ 'Save'|trans }}</button>
+        </td>
+    </tr>
+    </tbody>
+</table>
+{{ form_end(form) }}

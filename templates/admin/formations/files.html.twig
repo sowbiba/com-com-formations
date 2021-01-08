@@ -1,0 +1,105 @@
+{% import 'admin/formations/macros/file.html.twig' as formMacros %}
+{% extends 'admin/base.html.twig' %}
+
+{% set active_menu = 'formations' %}
+{% set container_class = 'container-sm' %}
+{% set route = app.request.attributes.get('_route') %}
+{% set routeParams = app.request.attributes.get('_route_params') %}
+
+{% block title %}{{ 'Edit formation files'|trans }}{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('formations') }}
+{% endblock %}
+
+{% block content %}
+    <h1>{{ 'Edit formation files'|trans }}</h1>
+    <h3><em>Formation : {{ formation.title }}</em></h3>
+
+    <table class="table table-responsive-xl table-bordered">
+        <thead>
+        <tr>
+            <th>
+                {{ 'File'|trans }}
+            </th>
+            <th>{{ 'Actions'|trans }}</th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for formationFile in formationFiles %}
+                {{ formMacros.printFileRow(formationFile, formation) }}
+            {% endfor %}
+        </tbody>
+    </table>
+    {{ form_start(addFileForm, {'method': 'POST', 'action': path('app_admin_formations_files_add', {'id': formation.id})}) }}
+        <table class="table table-responsive-xl table-borderless">
+            <tbody>
+                <tr><td colspan="2"></td></tr>
+                <tr><td colspan="2"></td></tr>
+                <tr>
+                    <td colspan="2"><h5>{{ 'Add formation file'|trans }}</h5></td>
+                </tr>
+                <tr>
+                    <td class="position-relative">
+                        {{ form_label(addFileForm.file) }}
+                        {{ form_widget(addFileForm.file) }}
+                    </td>
+                    <td class="position-relative">
+                        {{ form_label(addFileForm.fancyName) }}
+                        {{ form_widget(addFileForm.fancyName) }}
+                    </td>
+                    <td style="vertical-align: bottom;padding-bottom: 15px;">
+                        <button
+                                type="submit"
+                                class="add_formation_file btn btn-success form-action-button"
+                                title="{{ 'Add formation file'|trans }}"
+                        >
+                            <span class="oi oi-plus" aria-hidden="true"></span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    {{ form_end(addFileForm) }}
+    <table class="table table-responsive-xl table-borderless">
+        <tbody>
+            <tr><td colspan="2"></td></tr>
+            <tr><td colspan="2"></td></tr>
+            <tr>
+                <td colspan="2" class="text-center">
+                    <a href="{{ path('app_admin_formations') }}" class="btn btn-light form-action-button">{{ 'Quit'|trans }}</a>
+                    <a href="{{ path('app_admin_formations_edit', {'id': formation.id}) }}" class="btn btn-primary form-action-button">{{ 'Back to Edit formation'|trans }}</a>
+                    <a href="{{ path('app_admin_formations_formations_linked', {'id': formation.id}) }}" class="btn btn-success form-action-button">{{ 'Save and Edit formation formations linked'|trans }}</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('formations') }}
+{% endblock %}
+
+{% block modal %}
+    <div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">{{ 'Confirm delete'|trans }}</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    {{ 'Are you sure you want to delete?'|trans }}
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default btn-cancel" data-dismiss="modal">{{ 'Cancel'|trans }}</button>
+                    <a class="btn btn-danger btn-ok">{{ 'Delete'|trans }}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

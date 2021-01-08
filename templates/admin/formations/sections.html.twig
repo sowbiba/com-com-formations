@@ -1,0 +1,57 @@
+{% import 'admin/formations/macros/date.html.twig' as formMacros %}
+{% extends 'admin/base.html.twig' %}
+
+{% set active_menu = 'formations' %}
+{% set container_class = 'container-sm' %}
+{% set route = app.request.attributes.get('_route') %}
+{% set routeParams = app.request.attributes.get('_route_params') %}
+
+{% block title %}{{ 'Edit formation sections'|trans }}{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('formations') }}
+{% endblock %}
+
+{% block content %}
+    <h1>{{ 'Edit formation sections'|trans }}</h1>
+    <h3><em>Formation : {{ formation.title }}</em></h3>
+
+    {{ form_start(form, {'method': 'POST', 'action': path('app_admin_formations_sections', {'id': formation.id})}) }}
+        <table class="table table-responsive-xl table-borderless">
+            <tbody>
+                {% for key, section in form.children %}
+                    {% if key is not same as '_token' %}
+                        <tr>
+                            <td class="col-form-label">
+                                {{ form_label(section) }}
+                            </td>
+                            <td>
+                                {{ form_widget(section) }}
+                            </td>
+                        </tr>
+                    {% endif %}
+                {% endfor %}
+            </tbody>
+        </table>
+        <table class="table table-responsive-xl table-borderless">
+            <tbody>
+                <tr><td colspan="2"></td></tr>
+                <tr><td colspan="2"></td></tr>
+                <tr>
+                    <td colspan="2" class="text-center">
+                        <a href="{{ path('app_admin_formations') }}" class="btn btn-light form-action-button">{{ 'Quit'|trans }}</a>
+                        <a href="{{ path('app_admin_formations_edit', {'id': formation.id}) }}" class="btn btn-primary form-action-button">{{ 'Back to Edit formation'|trans }}</a>
+                        <button type="submit" class="btn btn-success form-action-button">{{ 'Save and Edit formation files'|trans }}</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    {{ form_end(form) }}
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('formations') }}
+{% endblock %}

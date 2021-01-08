@@ -1,0 +1,21 @@
+{% extends 'admin/base.html.twig' %}
+
+{% set active_menu = 'users' %}
+{% set container_class = 'container-sm' %}
+
+{% block title %}{{ 'Create user'|trans }}{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('users') }}
+{% endblock %}
+
+{% block content %}
+    <h1>{{ 'Create user'|trans }}</h1>
+    {% include 'admin/users/Blocks/form.html.twig' %}
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('users') }}
+{% endblock %}

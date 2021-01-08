@@ -1,0 +1,7 @@
+parameters:
+  app.upload_directory.images: '%kernel.project_dir%/assets/images/uploads/'
+  app.build_directory.images: '%kernel.project_dir%/public/build/images/uploads/'
+  app.public_directory.images: '/build/images/uploads/'
+  app.upload_directory.files: '%kernel.project_dir%/assets/files/uploads/'
+  app.build_directory.files: '%kernel.project_dir%/public/build/files/uploads/'
+  app.public_directory.files: '/build/files/uploads/'

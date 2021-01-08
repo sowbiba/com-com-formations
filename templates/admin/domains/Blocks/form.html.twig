@@ -1,0 +1,52 @@
+{{ form_start(form) }}
+<table class="table table-responsive-xl table-borderless">
+    <tbody>
+    <tr>
+        <td class="col-form-label">
+            {{ form_label(form.title) }}
+            {{ form_errors(form.title) }}
+        </td>
+        <td>
+            {{ form_widget(form.title) }}
+        </td>
+    </tr>
+    <tr>
+        <td class="col-form-label">
+            {{ form_label(form.color) }}
+            {{ form_errors(form.color) }}
+        </td>
+        <td>
+            <div class="col-10 pull-left padding-0">
+                {{ form_widget(form.color) }}
+            </div>
+            <div class="pull-right domain-color-sample padding-0"></div>
+        </td>
+    </tr>
+    <tr>
+        <td class="col-form-label">
+            {{ form_label(form.icon) }}
+            {{ form_errors(form.icon) }}
+            <a class="btn-floating btn btn-help btn-sm btn-primary" data-trigger="click focus" data-toggle="tooltip" data-placement="right" title="{{ 'icon help'|trans({'%link_start%': '<a href=\'https://boxicons.com/\' target=\'_blank\'>', '%link_end%': '</a>'})|raw }}">
+                <i class="oi oi-question-mark"></i>
+            </a>
+        </td>
+        <td>
+            <div class="col-10 pull-left padding-0">
+                {{ form_widget(form.icon) }}
+            </div>
+            <div class="pull-right domain-icon-sample icon-sample padding-0">
+                <i class="icon bx"></i>
+            </div>
+        </td>
+    </tr>
+    <tr><td colspan="2"></td></tr>
+    <tr><td colspan="2"></td></tr>
+    <tr>
+        <td class="submit" colspan="2">
+            <a href="{{ path('app_admin_domains') }}" class="btn btn-light form-action-button">{{ 'Quit'|trans }}</a>
+            <button type="submit" class="btn btn-success form-action-button">{{ 'Save'|trans }}</button>
+        </td>
+    </tr>
+    </tbody>
+</table>
+{{ form_end(form) }}

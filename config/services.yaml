@@ -29,3 +29,18 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+
+    app.security.user_provider.username:
+        class: App\Security\Provider\UserProvider
+
+    App\Uploader\ImageUploader:
+        arguments:
+            $uploadDirectory: '%app.upload_directory.images%'
+            $buildDirectory: '%app.build_directory.images%'
+            $publicDirectory: '%app.public_directory.images%'
+
+    App\Uploader\FileUploader:
+        arguments:
+            $uploadDirectory: '%app.upload_directory.files%'
+            $buildDirectory: '%app.build_directory.files%'
+            $publicDirectory: '%app.public_directory.files%'

@@ -1,0 +1,116 @@
+{% extends 'front/base.html.twig' %}
+
+{% block page_header %}
+    <div class="edged-header formation-header">
+        <div class="front-content container">
+            <div class="header-wrapper {% if sidebarDisplayed is same as true %}col-9{% else %}col-12{% endif %}">
+                <h1>{{ formation.title }} <em>({{ formation.reference }})</em></h1>
+            </div>
+        </div>
+    </div>
+{% endblock page_header %}
+{% block content %}
+    <main class="formation-main">
+        <div class="formation-view-block">
+            {% for formationSection in formation.formationSections %}
+                {% include 'front/Blocks/view/formation_section.html.twig' %}
+            {% endfor %}
+            {% if formation.formationFiles|length > 0 %}
+            <div class="underlined-chapter formation-chapter">
+                <h2>{{ 'Additional files'|trans }}</h2>
+                <div class="underlined-chapter-content formation-chapter-content">
+                    {% for formationFile in formation.formationFiles %}
+                        {% set fileExtension = formationFile.file|split('.')|last %}
+                        {% if 'pdf' == fileExtension %}
+                            {% set fileIcon = 'bxs-file-pdf' %}
+                            {% set iconColor = 'red' %}
+                        {% elseif 'doc' == fileExtension or 'docx' == fileExtension %}
+                            {% set fileIcon = 'bxs-file-doc' %}
+                            {% set iconColor = 'blue' %}
+                        {% else %}
+                            {% set fileIcon = 'bxs-file-plus' %}
+                            {% set iconColor = 'green' %}
+                        {% endif %}
+
+                        <a class="file" href="{{ formationFile.file }}" target="_blank">
+                            <i class="icon bx {{ fileIcon }} bx-file" style="color: {{ iconColor }};"></i>
+                            {{ formationFile.fancyName }}
+                        </a>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+        </div>
+        <div class="formation-view-block padding-0">
+            <div class="navs">
+                <nav>
+                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                        <a class="nav-item nav-link active" id="nav-program-tab" data-toggle="tab" href="#nav-program" role="tab" aria-controls="nav-program" aria-selected="true">{{ 'Program'|trans }}</a>
+                        <a class="nav-item nav-link" id="nav-intervenants-tab" data-toggle="tab" href="#nav-intervenants" role="tab" aria-controls="nav-intervenants" aria-selected="false">{{ 'Intervenants'|trans }}</a>
+                        <a class="nav-item nav-link" id="nav-extras-tab" data-toggle="tab" href="#nav-extras" role="tab" aria-controls="nav-extras" aria-selected="false">{{ 'Extras'|trans }}</a>
+                        <a class="nav-item nav-link" id="nav-pedagogic-means-tab" data-toggle="tab" href="#nav-pedagogic-means" role="tab" aria-controls="nav-pedagogic-means" aria-selected="false">{{ 'Pedagogic means'|trans }}</a>
+                        <a class="nav-item nav-link" id="nav-dates-tab" data-toggle="tab" href="#nav-dates" role="tab" aria-controls="nav-dates" aria-selected="false">{{ 'Dates'|trans }}</a>
+                        <a class="nav-item nav-link" id="nav-formations-linked-tab" data-toggle="tab" href="#nav-formations-linked" role="tab" aria-controls="nav-formations-linked" aria-selected="false">{{ 'Formations linked'|trans }}</a>
+                    </div>
+                </nav>
+            </div>
+            <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active" id="nav-program" role="tabpanel" aria-labelledby="nav-program-tab">
+                    {{ formation.program|raw }}
+                </div>
+                <div class="tab-pane fade" id="nav-intervenants" role="tabpanel" aria-labelledby="nav-intervenants-tab">
+                    {% for intervenant in formation.intervenants %}
+                        <div class="intervenant">
+                            <div class="intervenant-image col-3 pull-left">
+                                <figure>
+                                    <img src="{% if intervenant.image %}{{ asset(intervenant.image) }}{% else %}{{ asset('/build/images/image_floutee.jpg') }}{% endif %}" alt="{{ intervenant.name }}" title="{{ intervenant.name }}" />
+                                </figure>
+                            </div>
+                            <div class="intervenant-infos col-9 pull-right">
+                                <div class="intervenant-name">{{ intervenant.name }}</div>
+                                <div class="intervenant-title">{{ intervenant.title }}</div>
+                                <div class="intervenant-description">{{ intervenant.description|raw }}</div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="tab-pane fade" id="nav-extras" role="tabpanel" aria-labelledby="nav-extras-tab">
+                    {{ formation.extras|raw }}
+                </div>
+                <div class="tab-pane fade" id="nav-pedagogic-means" role="tabpanel" aria-labelledby="nav-pedagogic-means-tab">
+                    {{ formation.pedagogicMeans|raw }}
+                </div>
+                <div class="tab-pane fade" id="nav-dates" role="tabpanel" aria-labelledby="nav-dates-tab">
+                    <h3>{{ 'Formation dates'|trans }}</h3>
+                    {% set formationDates = formation.formationDates %}
+                    {% if formationDates.regular|length > 0 %}
+                        <h4>{{ 'Regular dates'|trans }}</h4>
+                        <ul>
+                            {% for formationDate in formationDates.regular %}
+                                <li>{{ formationDate.date ~ ' ' ~ formationDate.hours }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                    {% if formationDates.eLearning|length > 0 %}
+                        <h4>{{ 'E-learning dates'|trans }}</h4>
+                        <ul>
+                            {% for formationDate in formationDates.eLearning %}
+                                <li>{{ formationDate.date ~ ' ' ~ formationDate.hours }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+                <div class="tab-pane fade" id="nav-formations-linked" role="tabpanel" aria-labelledby="nav-formations-linked-tab">
+                    <h3>{{ 'Our suggested formations'|trans  }}</h3>
+                    <ul>
+                        {% for formationLinked in formation.formationLinkeds %}
+                            <li>
+                                <a href="{{ path('app_front_formations_view', {'slug': formationLinked.slug}) }}">{{ formationLinked.title }} <em>({{ formationLinked.reference }})</em></a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock content %}

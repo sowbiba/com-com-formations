@@ -1,0 +1,28 @@
+<li class="formation-item">
+    <div class="formation">
+        <div class="content-area">
+            <h3 class="formation-title">
+                <a class="formation-link" href="{{ path('app_front_formations_view', {'slug': formation.slug}) }}">{{ formation.title|raw }}</a>
+            </h3>
+
+            {{ formation.excerpt|raw }}
+        </div>
+        <div class="details-area">
+            <div class="detail reference">{{ 'Reference'|trans }} : <strong>{{ formation.reference }}</strong></div>
+            <div class="detail level">{{ 'Level'|trans }} : <strong>{{ formation.levelLabel|trans }}</strong></div>
+            <div class="detail duration">{{ 'Duration'|trans }} : <strong>{{ formation.duration }}</strong></div>
+            <div class="detail informations">
+                <a href="#" class="btn btn-lg col-12">
+                    {{ 'Ask for informations'|trans }}
+                    <span class="oi oi-double-quote-serif-right"></span>
+                </a>
+            </div>
+            <div class="detail program">
+                <a href="{{ path('app_front_formations_view', {'slug': formation.slug}) }}" class="btn btn-lg col-12">
+                    {{ 'View the program'|trans }}
+                    <span class="oi oi-eye"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</li>

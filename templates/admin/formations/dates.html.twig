@@ -1,0 +1,131 @@
+{% import 'admin/formations/macros/date.html.twig' as formMacros %}
+{% extends 'admin/base.html.twig' %}
+
+{% set active_menu = 'formations' %}
+{% set container_class = 'container-sm' %}
+{% set route = app.request.attributes.get('_route') %}
+{% set routeParams = app.request.attributes.get('_route_params') %}
+
+{% block title %}{{ 'Edit formation dates'|trans }}{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('formations') }}
+{% endblock %}
+
+{% block content %}
+    <h1>{{ 'Edit formation dates'|trans }}</h1>
+    <h3><em>Formation : {{ formation.title }}</em></h3>
+
+    <table class="table table-responsive-xl table-bordered">
+        <thead>
+        <tr>
+            <th>
+                <a href="
+                    {{ path(route, routeParams|merge(app.request.query.all)|merge(
+                    {
+                        'sort': 'date',
+                        'direction': sortField is same as('date') and sortDirection is same as('ASC') ? 'DESC' : 'ASC'
+                    }
+                )) }}">
+                    {{ 'Date'|trans }}{% include 'admin/Blocks/sorting.html.twig' with { 'field': 'date' } %}
+                </a>
+            </th>
+            <th>
+                {{ 'Hours'|trans }}
+            </th>
+            <th>
+                <a href="
+                    {{ path(route, routeParams|merge(app.request.query.all)|merge(
+                    {
+                        'sort': 'e_learning',
+                        'direction': sortField is same as('e_learning') and sortDirection is same as('ASC') ? 'DESC' : 'ASC'
+                    }
+                )) }}">
+                    {{ 'E-learning'|trans }}{% include 'admin/Blocks/sorting.html.twig' with { 'field': 'e_learning' } %}
+                </a>
+            </th>
+            <th>{{ 'Actions'|trans }}</th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for formationDate in formationDates %}
+                {{ formMacros.printDateRow(formationDate, formation) }}
+            {% endfor %}
+        </tbody>
+    </table>
+    {{ form_start(addDateForm, {'method': 'POST', 'action': path('app_admin_formations_dates_add', {'id': formation.id})}) }}
+        <table class="table table-responsive-xl table-borderless">
+            <tbody>
+                <tr><td colspan="2"></td></tr>
+                <tr><td colspan="2"></td></tr>
+                <tr>
+                    <td colspan="2"><h5>{{ 'Add formation date'|trans }}</h5></td>
+                </tr>
+                <tr>
+                    <td class="position-relative">
+                        {{ form_label(addDateForm.date) }}
+                        {{ form_widget(addDateForm.date) }}
+                    </td>
+                    <td class="position-relative">
+                        {{ form_label(addDateForm.hours) }}
+                        {{ form_widget(addDateForm.hours) }}
+                    </td>
+                    <td class="row-checkbox">
+                        {{ form_label(addDateForm.e_learning) }}
+                        {{ form_widget(addDateForm.e_learning) }}
+                    </td>
+                    <td style="vertical-align: bottom;padding-bottom: 15px;">
+                        <button
+                                type="submit"
+                                class="add_formation_date btn btn-success form-action-button"
+                                title="{{ 'Add formation date'|trans }}"
+                        >
+                            <span class="oi oi-plus" aria-hidden="true"></span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    {{ form_end(addDateForm) }}
+    <table class="table table-responsive-xl table-borderless">
+        <tbody>
+            <tr><td colspan="2"></td></tr>
+            <tr><td colspan="2"></td></tr>
+            <tr>
+                <td colspan="2" class="text-center">
+                    <a href="{{ path('app_admin_formations') }}" class="btn btn-light form-action-button">{{ 'Quit'|trans }}</a>
+                    <a href="{{ path('app_admin_formations_edit', {'id': formation.id}) }}" class="btn btn-primary form-action-button">{{ 'Back to Edit formation'|trans }}</a>
+                    <a href="{{ path('app_admin_formations_sections', {'id': formation.id}) }}" class="btn btn-success form-action-button">{{ 'Save and Edit formation sections'|trans }}</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('formations') }}
+{% endblock %}
+
+{% block modal %}
+    <div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">{{ 'Confirm delete'|trans }}</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    {{ 'Are you sure you want to delete?'|trans }}
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default btn-cancel" data-dismiss="modal">{{ 'Cancel'|trans }}</button>
+                    <a class="btn btn-danger btn-ok">{{ 'Delete'|trans }}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

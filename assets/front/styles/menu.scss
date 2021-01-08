@@ -1,0 +1,543 @@
+@import '../../styles/variables';
+
+.nav-main {
+  height: 100%;
+
+  h4 {
+    font-size: 14px;
+    //top: 50%;
+    //transform: translateY(-50%);
+    //position: absolute;
+  }
+
+  .controls {
+    height: 100%;
+    width: 2%;
+    background: #1977cc;
+    opacity: 0.2;
+    display: block;
+    position: relative;
+    float: left;
+    padding-top: 40px;
+    padding-left: 10px;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    &.control-left {
+      margin-right: 5px;
+    }
+    &.control-right {
+      margin-left: 5px;
+    }
+
+    .arrow {
+      border: solid #FFFFFF;
+      border-width: 0 3px 3px 0;
+      display: inline-block;
+      padding: 3px;
+    }
+
+    .right {
+      transform: rotate(-45deg);
+      -webkit-transform: rotate(-45deg);
+    }
+
+    .left {
+      transform: rotate(135deg);
+      -webkit-transform: rotate(135deg);
+    }
+  }
+
+  .carousel-inner {
+    width: 95%;
+    position: relative;
+    float: left;
+  }
+
+  .carousel-item {
+    .domain-item {
+      width: 16.66667%;
+      height: 105px;
+    }
+    .card {
+      //flex-direction: initial;
+      width: 100%;
+      height: 100%;
+      border-radius: unset;
+
+      .icon {
+        font-size: 40px;
+        text-align: center;
+      }
+
+      .card-body {
+        padding: 0 5px;
+        text-align: center;
+      }
+    }
+  }
+}
+.nav-main--items {
+  font-size: 0;
+  text-align: left;
+  margin: 0;
+}
+.nav-main--item {
+  display: inline-block;
+  font-size: 16px;
+  text-align: left;
+  position: static;
+
+  &:hover {
+    background-color: #FFFFFF !important;
+    //background-color: #e41b13;
+    //background-color: #009dd2;
+    color: #ffffff;
+
+    .nav-main--link {
+      color: #ffffff;
+    }
+  }
+}
+
+.nav-main--link {
+  //padding-right: 3em !important;
+  margin: 0;
+  padding: .3em 1.5em .4em 1.5em;
+  background: transparent;
+  display: block;
+  //display: inline-block;
+  color: #21215d;
+  font-family: Open Sans, Arial, serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 30px;
+  position: relative;
+  text-transform: uppercase;
+  transition: all .1s ease-in;
+}
+
+.nav-main--items-l2 {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  //left: -180px;
+  left: 15px;
+  width: auto;
+  border-top: 5px solid #1977cc;
+  //border-top: 5px solid #e41b13;
+  //border-top: 5px solid #009dd2;
+  border-right: 0;
+  border-left: 0;
+  padding: 3em;
+  background: #fff;
+  box-shadow: 0 5px 5px 1px rgba(147,145,156,.75);
+  display: none;
+  z-index: 1;
+}
+
+.nav-main--item-l2 {
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
+  break-inside: avoid;
+  position: relative;
+
+  &::before {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 0;
+    right: auto;
+    left: 0;
+    //color: rgb(228, 27, 19);
+    font-family: icons;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.42857rem;
+    line-height: .8;
+  }
+}
+
+.nav-main--link-l2--default .card, .nav-main--link-l2--default .card a
+{
+  color: #FFFFFF !important;
+  border-color: $domain-color-default !important;
+  background-color: $domain-color-default !important;
+
+  &:hover {
+    background-color: #FFFFFF !important;
+    color: $domain-color-default !important;
+    border-color: $domain-color-default !important;
+  }
+}
+
+.nav-main--link-l2--blue .card, .nav-main--link-l2--blue .card a
+{
+  color: #FFFFFF !important;
+  border-color: $domain-color-blue !important;
+  background-color: $domain-color-blue !important;
+
+  &:hover {
+    background-color: #FFFFFF !important;
+    color: $domain-color-blue !important;
+    border-color: $domain-color-blue !important;
+  }
+}
+
+.nav-main--link-l2--blue-corporate .card, .nav-main--link-l2--blue-corporate .card a
+{
+  color: #FFFFFF !important;
+  border-color: $domain-color-blue-corporate !important;
+  background-color: $domain-color-blue-corporate !important;
+
+  &:hover {
+    background-color: #FFFFFF !important;
+    color: $domain-color-blue-corporate !important;
+    border-color: $domain-color-blue-corporate !important;
+  }
+}
+
+.nav-main--link-l2--blue-light .card, .nav-main--link-l2--blue-light .card a
+{
+  color: #FFFFFF !important;
+  border-color: $domain-color-blue-light !important;
+  background-color: $domain-color-blue-light !important;
+
+  &:hover {
+    background-color: #FFFFFF !important;
+    color: $domain-color-blue-light !important;
+    border-color: $domain-color-blue-light !important;
+  }
+}
+
+.nav-main--link-l2--blue-sky .card, .nav-main--link-l2--blue-sky .card a
+{
+  color: #FFFFFF !important;
+  border-color: $domain-color-blue-sky !important;
+  background-color: $domain-color-blue-sky !important;
+
+  &:hover {
+    background-color: #FFFFFF !important;
+    color: $domain-color-blue-sky !important;
+    border-color: $domain-color-blue-sky !important;
+  }
+}
+
+.nav-main--link-l2--blue-xlight .card, .nav-main--link-l2--blue-xlight .card a
+{
+  color: #FFFFFF !important;
+  border-color: $domain-color-blue-xlight !important;
+  background-color: $domain-color-blue-xlight !important;
+
+  &:hover {
+    background-color: #FFFFFF !important;
+    color: $domain-color-blue-xlight !important;
+    border-color: $domain-color-blue-xlight !important;
+  }
+}
+
+.nav-main--link-l2--green .card, .nav-main--link-l2--green .card a
+{
+  color: #FFFFFF !important;
+  border-color: $domain-color-green !important;
+  background-color: $domain-color-green !important;
+
+  &:hover {
+    background-color: #FFFFFF !important;
+    color: $domain-color-green !important;
+    border-color: $domain-color-green !important;
+  }
+}
+
+.nav-main--link-l2--green-xlight .card, .nav-main--link-l2--green-xlight .card a
+{
+  color: #FFFFFF !important;
+  border-color: $domain-color-green-xlight !important;
+  background-color: $domain-color-green-xlight !important;
+
+  &:hover {
+    background-color: #FFFFFF !important;
+    color: $domain-color-green-xlight !important;
+    border-color: $domain-color-green-xlight !important;
+  }
+}
+
+.nav-main--link-l2--green-xxlight .card, .nav-main--link-l2--green-xxlight .card a
+{
+  color: #FFFFFF !important;
+  border-color: $domain-color-green-xxlight !important;
+  background-color: $domain-color-green-xxlight !important;
+
+  &:hover {
+    background-color: #FFFFFF !important;
+    color: $domain-color-green-xxlight !important;
+    border-color: $domain-color-green-xxlight !important;
+  }
+}
+
+.nav-main--link-l2--green-dark .card, .nav-main--link-l2--green-dark .card a
+{
+  color: #FFFFFF !important;
+  border-color: $domain-color-green-dark !important;
+  background-color: $domain-color-green-dark !important;
+
+  &:hover {
+    background-color: #FFFFFF !important;
+    color: $domain-color-green-dark !important;
+    border-color: $domain-color-green-dark !important;
+  }
+}
+
+.nav-main--link-l2--green-xdark .card, .nav-main--link-l2--green-xdark .card a
+{
+  color: #FFFFFF !important;
+  border-color: $domain-color-green-xdark !important;
+  background-color: $domain-color-green-xdark !important;
+
+  &:hover {
+    background-color: #FFFFFF !important;
+    color: $domain-color-green-xdark !important;
+    border-color: $domain-color-green-xdark !important;
+  }
+}
+
+.nav-main--link-l2--orangered .card, .nav-main--link-l2--orangered .card a
+{
+  color: #ffffff !important;
+  border-color: $domain-color-orangered !important;
+  background-color: $domain-color-orangered !important;
+
+  &:hover {
+    background-color: #FFFFFF !important;
+    color: $domain-color-orangered !important;
+    border-color: $domain-color-orangered !important;
+  }
+}
+
+.nav-main--link-l2--orange .card, .nav-main--link-l2--orange .card a
+{
+  color: #FFFFFF !important;
+  border-color: $domain-color-orange !important;
+  background-color: $domain-color-orange !important;
+
+  &:hover {
+    background-color: #FFFFFF !important;
+    color: $domain-color-orange !important;
+    border-color: $domain-color-orange !important;
+  }
+}
+
+.nav-main--link-l2--orange-light .card, .nav-main--link-l2--orange-light .card a
+{
+  color: #FFFFFF !important;
+  border-color: $domain-color-orange-light !important;
+  background-color: $domain-color-orange-light !important;
+
+  &:hover {
+    background-color: #FFFFFF !important;
+    color: $domain-color-orange-light !important;
+    border-color: $domain-color-orange-light !important;
+  }
+}
+
+.nav-main--link-l2--orange-xlight .card, .nav-main--link-l2--orange-xlight .card a
+{
+  color: #FFFFFF !important;
+  border-color: $domain-color-orange-xlight !important;
+  background-color: $domain-color-orange-xlight !important;
+
+  &:hover {
+    background-color: #FFFFFF !important;
+    color: $domain-color-orange-xlight !important;
+    border-color: $domain-color-orange-xlight !important;
+  }
+}
+
+.nav-main--link-l2--pink .card, .nav-main--link-l2--pink .card a
+{
+  color: #FFFFFF !important;
+  border-color: $domain-color-pink !important;
+  background-color: $domain-color-pink !important;
+
+  &:hover {
+    background-color: #FFFFFF !important;
+    color: $domain-color-pink !important;
+    border-color: $domain-color-pink !important;
+  }
+}
+
+.nav-main--link-l2--pink-light .card, .nav-main--link-l2--pink-light .card a
+{
+  color: #FFFFFF !important;
+  border-color: $domain-color-pink-light !important;
+  background-color: $domain-color-pink-light !important;
+
+  &:hover {
+    background-color: #FFFFFF !important;
+    color: $domain-color-pink-light !important;
+    border-color: $domain-color-pink-light !important;
+  }
+}
+
+.nav-main--link-l2--pink-salmon .card, .nav-main--link-l2--pink-salmon .card a
+{
+  color: #FFFFFF !important;
+  border-color: $domain-color-pink-salmon !important;
+  background-color: $domain-color-pink-salmon !important;
+
+  &:hover {
+    background-color: #FFFFFF !important;
+    color: $domain-color-pink-salmon !important;
+    border-color: $domain-color-pink-salmon !important;
+  }
+}
+
+.nav-main--link-l2--purple .card, .nav-main--link-l2--purple .card a
+{
+  color: #FFFFFF !important;
+  border-color: $domain-color-purple !important;
+  background-color: $domain-color-purple !important;
+
+  &:hover {
+    background-color: #FFFFFF !important;
+    color: $domain-color-purple !important;
+    border-color: $domain-color-purple !important;
+  }
+}
+
+.nav-main--link-l2--purple-light .card, .nav-main--link-l2--purple-light .card a
+{
+  color: #FFFFFF !important;
+  border-color: $domain-color-purple-light !important;
+  background-color: $domain-color-purple-light !important;
+
+  &:hover {
+    background-color: #FFFFFF !important;
+    color: $domain-color-purple-light !important;
+    border-color: $domain-color-purple-light !important;
+  }
+}
+
+.nav-main--link-l2--red .card, .nav-main--link-l2--red .card a
+{
+  color: #FFFFFF !important;
+  border-color: $domain-color-red !important;
+  background-color: $domain-color-red !important;
+
+  &:hover {
+    background-color: #FFFFFF !important;
+    color: $domain-color-red !important;
+    border-color: $domain-color-red !important;
+  }
+}
+
+.nav-main--link-l2--red-corporate .card, .nav-main--link-l2--red-corporate .card a
+{
+  color: #FFFFFF !important;
+  border-color: $domain-color-red-corporate !important;
+  background-color: $domain-color-red-corporate !important;
+
+  &:hover {
+    background-color: #FFFFFF !important;
+    color: $domain-color-red-corporate !important;
+    border-color: $domain-color-red-corporate !important;
+  }
+}
+
+.nav-main--link-l2--turquoise .card, .nav-main--link-l2--turquoise .card a
+{
+  color: #ffffff !important;
+  border-color: $domain-color-turquoise !important;
+  background-color: $domain-color-turquoise !important;
+
+  &:hover {
+    background-color: #FFFFFF !important;
+    color: $domain-color-turquoise !important;
+    border-color: $domain-color-turquoise !important;
+  }
+}
+
+.nav-main--link-l2--turquoise-light .card, .nav-main--link-l2--turquoise-light .card a
+{
+  color: #FFFFFF !important;
+  border-color: $domain-color-turquoise-light !important;
+  background-color: $domain-color-turquoise-light !important;
+
+  &:hover {
+    background-color: #FFFFFF !important;
+    color: $domain-color-turquoise-light !important;
+    border-color: $domain-color-turquoise-light !important;
+  }
+}
+
+.nav-main--link-l2--yellow .card, .nav-main--link-l2--yellow .card a
+{
+  color: #FFFFFF !important;
+  border-color: $domain-color-yellow !important;
+  background-color: $domain-color-yellow !important;
+
+  &:hover {
+    background-color: #FFFFFF !important;
+    color: $domain-color-yellow !important;
+    border-color: $domain-color-yellow !important;
+  }
+}
+
+.nav-main--link-l2--yellow-light .card, .nav-main--link-l2--yellow-light .card a
+{
+  color: #FFFFFF !important;
+  border-color: $domain-color-yellow-light !important;
+  background-color: $domain-color-yellow-light !important;
+
+  &:hover {
+    background-color: #FFFFFF !important;
+    color: $domain-color-yellow-light !important;
+    border-color: $domain-color-yellow-light !important;
+  }
+}
+
+.nav-main--link-l2--brown .card, .nav-main--link-l2--brown .card a
+{
+  color: #FFFFFF !important;
+  border-color: $domain-color-brown !important;
+  background-color: $domain-color-brown !important;
+
+  &:hover {
+    background-color: #FFFFFF !important;
+    color: $domain-color-brown !important;
+    border-color: $domain-color-brown !important;
+  }
+}
+
+.nav-main--item-l2, .nav-main--item-l2 li {
+  display: block;
+}
+
+.nav-main--item-l2 ul a, .nav-main--link-l2 {
+  //display: inline-block;
+  display: block;
+  width: 100%;
+  height: 100%;
+  vertical-align: top;
+  //margin: 0 0 1em;
+  //padding: 0 0 0 2.5em;
+  color: #21215d;
+  font-family: Open Sans,Arial, serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: none;
+  position: relative;
+  transition: all .1s ease-in;
+
+  &:hover {
+    color: #e41b13;
+  }
+}
+
+
+
+

@@ -1,0 +1,93 @@
+{% extends 'admin/base.html.twig' %}
+
+{% set active_menu = 'users' %}
+{% set container_class = 'container-sm' %}
+
+{% block title %}{{ 'Register user'|trans }}{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('users') }}
+{% endblock %}
+
+{% block content %}
+    {% for flashError in app.flashes('verify_email_error') %}
+        <div class="alert alert-danger" role="alert">{{ flashError }}</div>
+    {% endfor %}
+    <h1>{{ 'Register user'|trans }}</h1>
+
+    {{ form_start(registrationForm) }}
+    <table class="table table-responsive-xl table-borderless">
+        <tbody>
+        <tr>
+            <td class="col-form-label">
+                {{ form_label(registrationForm.username) }}
+                {{ form_errors(registrationForm.username) }}
+            </td>
+            <td>
+                {{ form_widget(registrationForm.username) }}
+            </td>
+        </tr>
+        <tr>
+            <td class="col-form-label">
+                {{ form_label(registrationForm.email) }}
+                {{ form_errors(registrationForm.email) }}
+            </td>
+            <td>
+                {{ form_widget(registrationForm.email) }}
+            </td>
+        </tr>
+        <tr>
+            <td class="col-form-label">
+                {{ form_label(registrationForm.plainPassword) }}
+                {{ form_errors(registrationForm.plainPassword) }}
+            </td>
+            <td>
+                {{ form_widget(registrationForm.plainPassword) }}
+            </td>
+        </tr>
+        <tr>
+            <td class="col-form-label">
+                {{ form_label(registrationForm.agreeTerms) }}
+                {{ form_errors(registrationForm.agreeTerms) }}
+            </td>
+            <td>
+                {{ form_widget(registrationForm.agreeTerms) }}
+            </td>
+        </tr>
+        <tr><td colspan="2"></td></tr>
+        <tr><td colspan="2"></td></tr>
+        <tr>
+            <td class="submit" colspan="2">
+                <a href="{{ path('app_admin_users') }}" class="btn btn-light form-action-button">{{ 'Cancel'|trans }}</a>
+                <button type="submit" class="btn btn-primary form-action-button">{{ 'Submit'|trans }}</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    {{ form_end(registrationForm) }}
+{% endblock %}
+
+
+{#{% extends 'base.html.twig' %}#}
+
+{#{% block title %}Register{% endblock %}#}
+
+{#{% block body %}#}
+{#    {% for flashError in app.flashes('verify_email_error') %}#}
+{#        <div class="alert alert-danger" role="alert">{{ flashError }}</div>#}
+{#    {% endfor %}#}
+
+{#    <h1>Register</h1>#}
+
+{#    {{ form_start(registrationForm) }}#}
+{#        {{ form_row(registrationForm.username) }}#}
+{#        {{ form_row(registrationForm.email) }}#}
+{#        {{ form_row(registrationForm.plainPassword, {#}
+{#            label: 'Password'#}
+{#        }) }}#}
+{#        {{ form_row(registrationForm.agreeTerms) }}#}
+
+{#        <button type="submit" class="btn">Register</button>#}
+{#    {{ form_end(registrationForm) }}#}
+{#{% endblock %}#}
