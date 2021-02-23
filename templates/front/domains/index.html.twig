@@ -9,6 +9,11 @@
 {% endblock page_header %}
 
 {% block content %}
+    {% if domain.landingText is not empty %}
+        <div class="col-12 margin-bottom-50">
+            {{ domain.landingText|raw }}
+        </div>
+    {% endif %}
     <div class="formations-list">
         <ul>
             {% for formation in pager.currentPageResults %}

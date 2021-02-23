@@ -477,3 +477,12 @@ section {
 .services .icon-box:hover p {
   color: #fff;
 }
+
+.domain-box {
+  width: 33.33333% !important;
+
+  div.icon-box {
+    width: 100%;
+    overflow: hidden;
+  }
+}

@@ -51,6 +51,16 @@ class Domain
      */
     private $encarts;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $excerpt;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $landingText;
+
     public function __construct()
     {
         $this->formations = new ArrayCollection();
@@ -159,6 +169,30 @@ class Domain
                 $encart->setDomain(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getExcerpt(): ?string
+    {
+        return $this->excerpt;
+    }
+
+    public function setExcerpt(?string $excerpt): self
+    {
+        $this->excerpt = $excerpt;
+
+        return $this;
+    }
+
+    public function getLandingText(): ?string
+    {
+        return $this->landingText;
+    }
+
+    public function setLandingText(?string $landingText): self
+    {
+        $this->landingText = $landingText;
 
         return $this;
     }
